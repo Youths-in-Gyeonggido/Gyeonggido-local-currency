@@ -9,32 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
   <script src="main.js" defer></script>
+  <script src="js/includeHTML.js"></script>
   <title>내 주변 경기도 지역화폐 가맹점</title>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="#" class="navbar_toggleBtn">
-        <i class="fas fa-bars "></i>
-      </a>
-      <ul class="navbar_menu">
-        <li><a href="">즐겨찾기</a></li>
-        <li><a href="">내 검색내역</a></li>
-        <li><a href="">내 별점 후기</a></li>
-        <li><a href="">회원 정보</a></li>
-      </ul>
-      <a href="" class="navbar_user">
-        <i class="fas fa-user-circle "></i></li>
-        <span class="user_name">USER</span></li>
-      </a>
-    </nav>
-    <div class="logo">
-      <a class="logo_a" href="#">
-        <i class="fas fa-won-sign"></i>
-        <span>내 주변 경기도 지역화폐 가맹점</span>
-      </a>
-    </div>
-  </header>
+  <div include-html="header.html"></div>
+  <script>includeHTML();</script>
   <main>
     <section class="search_sec">
       <div class="search">
