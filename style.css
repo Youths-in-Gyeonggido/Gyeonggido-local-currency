@@ -2,9 +2,12 @@
   blue : #3498db
 } */
 
+html {
+  font-size: 10px;
+  font-family: "Noto Sans KR", sans-serif;
+}
 body {
   margin: 0;
-  font-family: "Noto Sans KR", sans-serif;
 }
 
 ul {
@@ -21,12 +24,30 @@ a {
   color: black;
 }
 
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  cursor: pointer;
+  outline: none;
+  border-color: rgba(153, 153, 153, 0.527);
+}
+
 .navbar {
+  height: 45px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #3498db;
   padding: 8px 12px;
+  font-size: 1.7rem;
 }
 .navbar_toggleBtn {
   display: none;
@@ -61,10 +82,68 @@ a {
 .logo {
   font-size: 40px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+main {
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search > div {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.search_area_div * {
+  margin-right: 10px;
+}
+
+.search_area_div button {
+  background: #c4c2c2;
+  border-radius: 15px;
+  color: white;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 8rem;
+  transition: all 0.3s;
+}
+.search_area_div button:hover {
+  background: #1abc9c;
+}
+.search_select_div select {
+  padding: 3px;
+  width: 200px;
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+.search_button_div button {
+  background: #c4c2c2;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 15rem;
+  height: 4rem;
+  transition: all 0.3s;
+}
+
+.search_button_div button:hover {
+  background: #3498db;
 }
 
 @media screen and (max-width: 768px) {
+  html {
+    font-size: 0.6rem;
+  }
   .navbar {
+    height: 100%;
     flex-direction: column;
     align-items: flex-start;
     padding-bottom: 10px;
@@ -97,5 +176,9 @@ a {
   .navbar_user {
     position: absolute;
     right: 10px;
+  }
+
+  .logo {
+    font-size: 3.5rem;
   }
 }

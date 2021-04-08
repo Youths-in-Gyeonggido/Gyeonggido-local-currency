@@ -29,30 +29,39 @@
       </a>
     </nav>
     <div class="logo">
-      <i  href="" class="fas fa-won-sign"></i>
-      <a href="">내 주변 경기도 지역화폐 가맹점</a>
+      <a class="logo_a" href="#">
+        <i class="fas fa-won-sign"></i>
+        <span>내 주변 경기도 지역화폐 가맹점</span>
+      </a>
     </div>
   </header>
   <main>
-    <section class="search_sec"></section>
-    <div class="search">
-      <div class="search_area_div">
-        <label>현재위치:</label>
-        <label for="">현재위치</label>
-        <button class="area_change">위치변경</button>
+    <section class="search_sec">
+      <div class="search">
+        <div class="search_area_div">
+          <label>현재위치 :</label>
+          <label for="">경기도 수원시 장안구 율전동</label>
+          <button class="area_change_btn">위치변경</button>
+        </div>
+        <div class="search_select_div">
+          <select name="sectors" id="sectors-select">
+            <option value="">업종 선택</option>
+            <option value="">1</option>
+            <option value="">2</option>
+          </select>
+          <select name="sectors" id="sectors-select">
+            <option value="">반경 선택</option>
+            <option value="">1km</option>
+            <option value="">3km</option>
+            <option value="">5km</option>
+          </select>
+        </div>
+        <div class="search_button_div ">
+          <button class="search_button">가맹점 검색</button>
+        </div>
       </div>
-      <div class="search_select_div">
-        <select name="sectors" id="sectors-select">
-          <option value="">업종 선택</option>
-        </select>
-        <select name="sectors" id="sectors-select">
-          <option value="">반경 선택</option>
-        </select>
-      </div>
-      <div class="search_button_div">
-        <button class="search_button">가맹점 검색</button>
-      </div>
-    </div>
+    </section>
+    
     <section class="map_sec">
       <div class="map_div"></div>
     </section>
