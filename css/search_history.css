@@ -1,0 +1,50 @@
+html {
+    font-size: 10px;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.history_whole_delete_btn{
+    display: flex;
+    justify-content: flex-end;
+    background-color: chartreuse;
+    width: 100%;
+}
+.search_content{
+    display: flex;
+    justify-content: space-between;
+    background-color: darkgoldenrod;
+    padding: 0.3rem;
+    width: 30rem;
+}
+.history_section{
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.history_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.history_delete_btn{
+    position: absolute;
+    right: 0;
+}
+
+.history_search_btn{
+    display:flex;
+    justify-content: center;
+    
+}
