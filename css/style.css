@@ -8,6 +8,7 @@ html {
 }
 body {
   margin: 0;
+  
 }
 
 ul {
@@ -40,6 +41,7 @@ select {
   border-color: rgba(153, 153, 153, 0.527);
 }
 
+/* navbar */
 .navbar {
   height: 45px;
   display: flex;
@@ -79,6 +81,7 @@ select {
   padding: 5px;
 }
 
+/* logo */
 .logo {
   font-size: 40px;
   font-weight: bold;
@@ -86,17 +89,61 @@ select {
   justify-content: center;
   padding: 10px;
 }
+/* 왼쪽 메뉴 화면 */
+.menu_sec{
+  display: none;
+  float: left;
+  width: 35vw;
+  min-width: 35rem;
+  background-color: cadetblue;
+  overflow:auto;
+}
+.menu_sec.active{
+  display: block;
+}
+.menu_deco{
+  display: flex;
+  justify-content: center;
+}
+.menu{
+  display:none;
+}
+.menu.active{
+  display: block;
+}
 
+/* .mid{
+  display: flex;
+  justify-content: center;
+} */
+.menu.favorites{
+  
+}
+.menu.search_history{
+  
+}
+.menu.star_review{
+  
+}
+
+/* 오른쪽 가맹점 검색 메인 화면 */
 main {
   font-size: 1.8rem;
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  height: 100vh;
 }
+.search_sec.menu_active{
+  float:right;
+  overflow:auto;
+  width: 65vw;
+}
+
 
 .search > div {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   padding-top: 10px;
 }
 
@@ -139,6 +186,7 @@ main {
   background: #3498db;
 }
 
+/* 반응형 */
 @media screen and (max-width: 768px) {
   html {
     font-size: 0.6rem;
