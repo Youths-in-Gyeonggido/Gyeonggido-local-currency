@@ -1,61 +1,100 @@
-html {
-    font-size: 10px;
-    font-family: "Noto Sans KR", sans-serif;
+:root {
+  --body-background-color: #f5f6f7;
+  --font-color: #4e4e4e;
+  --border-gray-color: #dadada;
+  --main-blue-color: #3498db;
+  --main-blue-border-color: #2693db;
 }
-ul{
-    list-style: none;
-    padding-left: 0;
-    margin: 0px 0px;
+
+html {
+  font-size: 10px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0px 0px;
 }
 button {
-    border: none;
-    outline: none;
-    cursor: pointer;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
-p{
-    margin: 0px;
-    font-size: 1.3rem;
+p {
+  margin: 0px;
+  font-size: 1.3rem;
 }
-h4{
-    margin: 0px;
+h4 {
+  margin: 0px;
+  font-size: 1.3em;
+  color: var(--main-blue-color);
+}
+.store_address p {
+  color: var(--font-color);
+  font-size: 0.9em;
+  padding-bottom: 10px;
 }
 
 .section_content {
-    display: flex;
-    flex-direction: column;
-    background-color: aquamarine;
-    width: 30rem;
-    /* min-width: rem; */
-    max-width: 40rem;
-    padding: 0.5rem;
-    margin: 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  border: solid 1px #d1d1d1;
+  width: 38rem;
+  /* min-width: rem; */
+  max-width: 40rem;
+  padding: 0.5rem;
+  margin: 1rem 0.5rem;
 }
 .section_content div {
-    background-color: bisque;
-    margin: 0.2rem;
-    padding: 0.3rem;
+  margin: 0.2rem;
+  padding: 0.3rem;
 }
-.store_btns{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.store_btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
-.store_btns a,
 .store_btns button {
-    margin: 0.3rem 0.3rem;
-    background-color:cadetblue;
-    width: 5.0rem;
-    font-size: 1.2rem;
-    padding: 0rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1.8rem;
+  margin: 0.3rem 0.3rem;
+  border-radius: 15px;
+  border: solid 2px var(--main-blue-border-color);
+  background-color: var(--body-background-color);
+  width: 60px;
+  font-size: 1.2rem;
+  padding: 0em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
 }
+.store_btns i {
+  margin: 0.3rem 0.3rem;
+  width: 50px;
+  border-radius: 15px;
+  border: solid 2px var(--main-blue-border-color);
+  background-color: var(--body-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 26px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+.store_btns i:first-child:active {
+  background-color: var(--main-blue-color);
+}
+.store_btns .btn_check {
+  background-color: var(--main-blue-color);
+  font-size: 1em;
+  color: white;
+}
+
 /* .blind {
     position: absolute;
     overflow: hidden;
