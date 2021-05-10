@@ -1,10 +1,15 @@
+@charset "EUC-KR";
+
 /* color{
   blue : #3498db
 } */
 
+
+
 html {
   font-size: 10px;
   font-family: "Noto Sans KR", sans-serif;
+  /* min-width: 100rem; */
 }
 body {
   margin: 0;
@@ -88,17 +93,18 @@ select {
   justify-content: center;
   padding: 10px;
 }
-/* 왼쪽 메뉴 화면 */
+/* menu */
 .menu_sec {
   display: none;
-  float: left;
-  width: 35vw;
-  min-width: 35rem;
-  background-color: #ddf1ff;
-  overflow: auto;
 }
 .menu_sec.active {
   display: block;
+  float: left;
+  width: 30vw;
+  height:100vh;
+  
+  background-color: #ddf1ff;
+  overflow: auto;
 }
 .menu_deco {
   display: flex;
@@ -121,23 +127,29 @@ select {
 }
 .menu.star_review {
 }
-.menu h3 {
-  text-align: center;
-}
-/* 오른쪽 가맹점 검색 메인 화면 */
+
+/* main_sec */
 main {
   font-size: 1.8rem;
-  display: flex;
+ /*  display: flex;
   justify-content: center;
-
+  flex-direction:column; */
   height: 100vh;
 }
-.search_sec.menu_active {
+.main_sec{
+  height:100vh;
+}
+.main_sec.menu_active {
   float: right;
-  overflow: auto;
-  width: 65vw;
+  /* overflow: auto; */
+  width:65vw; 
 }
 
+.main_flex{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+}
 .search > div {
   display: flex;
   justify-content: center;
@@ -181,6 +193,12 @@ main {
 
 .search_button_div button:hover {
   background: #3498db;
+}
+
+.map_sec{
+	display:flex;
+	justify-content: center;
+	
 }
 
 /* 반응형 */

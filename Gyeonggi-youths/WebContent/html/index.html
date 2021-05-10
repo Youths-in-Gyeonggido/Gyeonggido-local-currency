@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="KR">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/store_list.css" />
+    <link rel="stylesheet" href="../css/kakaomap.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -50,50 +51,93 @@
         </div>
       </div>
       <!-- main/search main -->
-      <div class="search_sec" id="search_sec">
-        <div class="logo">
-          <a class="logo_a" href="#">
-            <i class="fas fa-won-sign"></i>
-            <span>내 주변 경기도 지역화폐 가맹점</span>
-          </a>
-        </div>
-        <div class="search">
-          <div class="search_area_div">
-            <label>현재위치 :</label>
-            <label>경기도 수원시 장안구 율전동</label>
-            <button class="area_change_btn">위치변경</button>
-          </div>
-          <div class="search_select_div">
-            <select name="sectors" id="sectors-select">
-              <option value="">업종 선택</option>
-              <option value="">1</option>
-              <option value="">2</option>
-            </select>
-            <select name="sectors" id="sectors-select">
-              <option value="">반경 선택</option>
-              <option value="">1km</option>
-              <option value="">3km</option>
-              <option value="">5km</option>
-            </select>
-          </div>
-          <div class="search_button_div">
-            <button class="search_button">가맹점 검색</button>
-          </div>
-        </div>
-      </div>
-      <section class="map_sec">
-        <!-- <div id="map" style="width:500px;height:400px;"></div> -->
-        <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1cfbf7dc8c75f6cba5c6e5684a408d0e"></script>
-      <script>
-        var container = document.getElementById('map');
-        var options = {
-          center: new window.kakao.maps.LatLng(33.450701, 126.570667),
-          level: 3
-        };
-        var map = new window.kakao.maps.Map(container, options);
-        console.log(container);
-      </script> -->
-      </section>
+      <div class="main_sec" id="main_sec">
+      	<div class="main_flex">
+	      <div class="search_sec" id="search_sec">
+	        <div class="logo">
+	          <a class="logo_a" href="index.html">
+	            <i class="fas fa-won-sign"></i>
+	            <span>내 주변 경기도 지역화폐 가맹점</span>
+	          </a>
+	        </div>
+	        <div class="search">
+	          <div class="search_area_div">
+	            <label>현재위치 :</label>
+	            <label>경기도 수원시 장안구 율전동</label>
+	            <button class="area_change_btn">위치변경</button>
+	          </div>
+	          <div class="search_select_div">
+	            <select name="sectors" id="sectors-select">
+	              <option value="">업종 선택</option>
+	              <option value="">1</option>
+	              <option value="">2</option>
+	            </select>
+	            <select name="sectors" id="sectors-select">
+	              <option value="">반경 선택</option>
+	              <option value="">1km</option>
+	              <option value="">3km</option>
+	              <option value="">5km</option>
+	            </select>
+	          </div>
+	          <div class="search_button_div">
+	            <button class="search_button">가맹점 검색</button>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="map_sec">
+	      <div class="map" id="map" ></div>
+			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2f696dcd122284d8212ec4dcee5b701f"></script>
+			<script>
+			
+				var container = document.getElementById('map');
+				var options = {
+					center: new kakao.maps.LatLng(37.27499050286018, 127.0089299711268),
+					level: 6
+				};
+		
+				var map = new kakao.maps.Map(container, options);
+				
+				// 주소-좌표 변환 객체
+				var geocoder = new kakao.maps.services.Geocoder();
+				
+				var marker = new kakao.maps.Marker({ 
+				    // 지도 중심좌표에 마커를 생성합니다 
+				    position: map.getCenter() 
+				}); 
+				
+				console.log(map.getCenter() );
+				marker.setMap(map);
+				
+				kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+				    
+				    // 클릭한 위도, 경도 정보를 가져옵니다 
+				    var latlng = mouseEvent.latLng; 
+				    
+				    // 마커 위치를 클릭한 위치로 옮깁니다
+				    marker.setPosition(latlng);
+				    
+				    console.log('클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, 경도는 ' + latlng.getLng() + ' 입니다');
+				});
+				
+				if (navigator.geolocation){
+					navigator.geolocation.getCurrentPosition(function(position) {
+				        
+				        var lat = position.coords.latitude, // 위도
+				            lon = position.coords.longitude; // 경도
+				        
+				        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+				            message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+				       console.log(locPosition);
+				            
+				       map.setCenter(locPosition);
+				       marker.setMap(map);
+				      });
+				}
+			</script>
+	      	<!-- <script type="text/javascript" src="../js/kakaomap.js"></script> -->
+	      </div>
+	    </div>
+     </div>
     </main>
     <!-- main -->
     <!-- footer start -->

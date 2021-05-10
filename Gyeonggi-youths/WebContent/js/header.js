@@ -21,7 +21,6 @@ window.onload = function() {
     const starReview = document.getElementById('star_review');
     let menuArray = [0,0,0];
     
-    console.log(menuSec);
   
     //즐겨찾기 버튼 클릭시
     navFavorites.addEventListener('click',()=>{

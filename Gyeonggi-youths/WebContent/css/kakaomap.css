@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.map{
+	margin-top:50px;
+	width:100vw;
+	height:70vh;	
+	background-color:red;
+}
