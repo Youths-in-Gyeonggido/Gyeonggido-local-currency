@@ -1,0 +1,97 @@
+:root {
+  --body-background-color: #f5f6f7;
+  --font-color: #4e4e4e;
+  --border-gray-color: #dadada;
+  --main-blue-color: #3498db;
+  --main-blue-border-color: #2693db;
+  --main-blue-second-color: #ddf1ff;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+.history_wrap {
+  display: flex;
+  flex-direction: column;
+  /* min-width: rem; */
+  max-width: 40rem;
+  padding: 0.5rem;
+  margin: 1rem 0.5rem;
+}
+/*
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+*/
+.history_whole_delete_btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+.history_whole_delete_btn a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+.history_whole_delete_btn a:hover {
+  color: #9b9898;
+}
+.search_content {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 10px;
+  border: solid 2px var(--border-gray-color);
+  padding: 0.3rem;
+}
+.search_content p {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.history_section {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.history_button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.history_button button {
+  border: 0;
+  outline: 0;
+  font-size: 1em;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 13px;
+  background-color: var(--main-blue-color);
+  cursor: pointer;
+}
+.history_button button:hover {
+  background-color: var(--main-blue-second-color);
+  color: black;
+}
+.fa-trash-alt {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.fa-trash-alt:hover {
+  color: red;
+}
+
+.history_search_btn {
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}

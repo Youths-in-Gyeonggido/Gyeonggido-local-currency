@@ -1,0 +1,230 @@
+/* color{
+  blue : #3498db
+} */
+
+html {
+  font-size: 10px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  cursor: pointer;
+  outline: none;
+  border-color: rgba(153, 153, 153, 0.527);
+}
+
+/* navbar */
+.navbar {
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3498db;
+  padding: 8px 12px;
+  font-size: 1.7rem;
+}
+.navbar_toggleBtn {
+  display: none;
+}
+.navbar_menu {
+  display: flex;
+  padding-left: 0;
+}
+.navbar_menu a {
+  color: white;
+}
+
+.navbar_menu li {
+  padding: 8px 12px;
+}
+
+.navbar li:hover,
+.navbar_user:hover {
+  background-color: rgba(255, 255, 255, 0.329);
+  border-radius: 5px;
+}
+.navbar_user {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.navbar_user i,
+.user_name {
+  padding: 5px;
+}
+
+/* logo */
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+/* 왼쪽 메뉴 화면 */
+.menu_sec {
+  display: none;
+  float: left;
+  width: 35vw;
+  min-width: 35rem;
+  background-color: #ddf1ff;
+  overflow: auto;
+}
+.menu_sec.active {
+  display: block;
+}
+.menu_deco {
+  display: flex;
+  justify-content: center;
+}
+.menu {
+  display: none;
+}
+.menu.active {
+  display: block;
+}
+
+/* .mid{
+    display: flex;
+    justify-content: center;
+  } */
+.menu.favorites {
+}
+.menu.search_history {
+}
+.menu.star_review {
+}
+.menu h3 {
+  text-align: center;
+}
+/* 오른쪽 가맹점 검색 메인 화면 */
+main {
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+
+  height: 100vh;
+}
+.search_sec.menu_active {
+  float: right;
+  overflow: auto;
+  width: 65vw;
+}
+
+.search > div {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.search_area_div * {
+  margin-right: 10px;
+}
+
+.search_area_div button {
+  background: #c4c2c2;
+  border-radius: 15px;
+  color: white;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 8rem;
+  transition: all 0.3s;
+}
+.search_area_div button:hover {
+  background: #1abc9c;
+}
+.search_select_div select {
+  padding: 3px;
+  width: 200px;
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+.search_button_div button {
+  background: #c4c2c2;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 15rem;
+  height: 4rem;
+  transition: all 0.3s;
+}
+
+.search_button_div button:hover {
+  background: #3498db;
+}
+
+/* 반응형 */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 0.6rem;
+  }
+  .navbar {
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 10px;
+  }
+
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar_menu li {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar_menu.active {
+    display: flex;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .navbar_toggleBtn {
+    display: block;
+    font-size: larger;
+    color: white;
+    transition: all ease 0.5s;
+  }
+  .navbar_toggleBtn:hover {
+    transform: rotate(90deg);
+  }
+  .navbar_user {
+    position: absolute;
+    right: 10px;
+  }
+
+  .logo {
+    font-size: 3.5rem;
+  }
+}
