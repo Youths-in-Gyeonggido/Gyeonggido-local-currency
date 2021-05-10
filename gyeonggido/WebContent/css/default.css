@@ -1,0 +1,24 @@
+
+
+body {
+    margin: 0;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+header {
+    display: flex;
+    flex-direction: column;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.0rem;
+}
