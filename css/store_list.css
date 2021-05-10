@@ -1,0 +1,205 @@
+:root {
+  --body-background-color: #f5f6f7;
+  --font-color: #4e4e4e;
+  --border-gray-color: #dadada;
+  --main-blue-color: #3498db;
+  --main-blue-border-color: #2693db;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0px 0px;
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+p {
+  margin: 0px;
+  font-size: 1.3rem;
+}
+h4 {
+  margin: 0px;
+  font-size: 1.3em;
+  color: var(--main-blue-color);
+}
+.store_address p {
+  color: var(--font-color);
+  font-size: 0.9em;
+  padding-bottom: 10px;
+}
+
+.section_content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  border: solid 1px #d1d1d1;
+  width: 38rem;
+  /* min-width: rem; */
+  max-width: 40rem;
+  padding: 0.5rem;
+  margin: 1rem 0.5rem;
+}
+.section_content div {
+  margin: 0.2rem;
+  padding: 0.3rem;
+}
+.store_btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.store_btns button {
+  margin: 0.3rem 0.3rem;
+  border-radius: 15px;
+  border: solid 2px var(--main-blue-border-color);
+  background-color: var(--body-background-color);
+  width: 60px;
+  font-size: 1.2rem;
+  padding: 0em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+.store_btns i {
+  margin: 0.3rem 0.3rem;
+  width: 50px;
+  border-radius: 15px;
+  border: solid 2px var(--main-blue-border-color);
+  background-color: var(--body-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 26px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+.store_btns i:first-child:active {
+  background-color: var(--main-blue-color);
+}
+.store_btns .btn_check {
+  background-color: var(--main-blue-color);
+  font-size: 1em;
+  color: white;
+}
+
+/* .blind {
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border: none;
+    clip: rect(0, 0, 0, 0);
+  } */
+/* 
+.star-input{
+    white-space: nowrap;
+}
+.star-input>.input{
+    display:inline-block;
+    width: 100px;
+    background-size: 100px;
+    height: 19px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.star-input>.input>input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.star-input>.input.focus{
+    outline: 1px dotted #ddd;
+}
+.star-input>.input>label{
+    width: 10px;
+    height: 0;
+    padding: 19px 0 0 0;
+    overflow: hidden;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{
+    background-size: 100px;
+    background-position: 0 bottom;
+}
+.star-input>.input>label:hover~label{
+    background-image: none;
+}
+.star-input>.input>label[for="p1"]{ 
+    width: 10px;
+    z-index: 10;
+}
+.star-input>.input>label[for="p2"]{ 
+    width: 20px;
+    z-index: 9;
+}
+.star-input>.input>label[for="p3"]{ 
+    width: 30px;
+    z-index: 8;
+}
+.star-input>.input>label[for="p4"]{ 
+    width: 40px;
+    z-index: 7;
+}
+.star-input>.input>label[for="p5"]{ 
+    width: 50px;
+    z-index: 6;
+}
+.star-input>.input>label[for="p6"]{ 
+    width: 60px;
+    z-index: 5;
+}
+.star-input>.input>label[for="p7"]{ 
+    width: 70px;
+    z-index: 4;
+}
+.star-input>.input>label[for="p8"]{ 
+    width: 80px;
+    z-index: 3;
+}
+.star-input>.input>label[for="p9"]{ 
+    width: 90px;
+    z-index: 2;
+}
+.star-input>.input>label[for="p10"]{ 
+    width: 100px;
+    z-index: 1;
+}
+.star-input>output{
+    display: inline-block;
+    width: 36px;
+    text-align: right;
+}
+.star-input>output>b{
+    font:bold 18px Helvetica, Arial, sans-serif;
+    vertical-align: middle;
+}
+.star-input>.input,
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{
+    display: inline-block;
+    vertical-align: top;
+} */
