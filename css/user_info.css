@@ -1,0 +1,144 @@
+:root {
+  --body-background-color: #f5f6f7;
+  --font-color: #4e4e4e;
+  --border-gray-color: #dadada;
+  --main-blue-color: #3498db;
+  --main-blue-border-color: #2693db;
+  --main-blue-hover-color: #053864d5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.all_user_info {
+  align-content: center;
+  position: relative;
+  z-index: 2;
+}
+.all_user_info h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.all_user_info h1 a {
+  color: black;
+}
+.all_user_info h2 {
+  font-size: 2em;
+  color: var(--main-blue-color);
+  columns: #fff;
+  text-align: center;
+  margin-bottom: 80px;
+  padding: 0 20px;
+}
+#modify_user_info {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+.user_column {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+}
+.title,
+.info_content {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding-left: 20px;
+  color: var(--main-blue-color);
+}
+.title_space {
+  margin-right: 10px;
+}
+.info_content {
+  color: var(--font-color);
+}
+.info_content:last-child {
+  display: flex;
+  align-items: center;
+}
+.user_column .divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgb(182, 182, 182);
+  margin: 9px 5px;
+}
+.email_space {
+  font-size: 0.9em;
+  padding: 0 3px;
+  color: var(--main-blue-color);
+}
+
+.user_btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: center;
+  margin-top: 30px;
+}
+.wrap_btns {
+  display: flex;
+  justify-content: center;
+  margin-left: 75px;
+  flex-grow: 2;
+}
+
+.user_btns input {
+  border: none;
+  font-size: 0.9em;
+  padding: 15px;
+  font-weight: 800;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #fff;
+  border-radius: 3px;
+}
+#modify_btn {
+  background-color: var(--main-blue-color);
+  transition: all 0.3s;
+}
+#modify_btn:hover {
+  background-color: var(--main-blue-hover-color);
+}
+#cancel_btn {
+  background-color: rgb(167, 167, 167);
+  transition: all 0.3s;
+}
+#cancel_btn:hover {
+  background-color: rgb(95, 91, 91);
+}
+#delete_btn {
+  padding: 3px 5px;
+  font-weight: 400;
+  color: #9c9c9c;
+  border: 1px solid #c2c2c2;
+  transition: all 0.3s;
+}
+#delete_btn:hover {
+  background-color: #a8a8a842;
+}

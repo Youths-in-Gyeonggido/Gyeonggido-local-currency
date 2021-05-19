@@ -1,39 +1,128 @@
+<!--  header를 사용하기 위한 파라미터 받아와서 contentPage에 담고 
+  <%
+    String contentPage=request.getParameter("contentPage");
+    if(contentPage==null)
+        contentPage="FirstView.jsp";
+  %>
+-->
 <!DOCTYPE html>
 <html lang="kr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>회원 정보</title>
+    <link rel="stylesheet" href="../../css/user_info.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <script type="text/javascript" src="../../js/includeHTML.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h2>내 정보 수정</h2>
-    <div id="modify_user_info" class="my_page_content">
-      <div class="user_info">
-        <div class="user_nickname_section">
-          <label>닉네임</label>
-          <input type="text" name="user_nickname" required />
-        </div>
-        <div class="user_id_section">
-          <span>아이디</span>
-          <span name="user_id">thisisid</span>
-        </div>
-        <div class="user_email_section">
-          <label>이메일</label>
-          <input type="text" name="user_email" required />
-        </div>
-        <div class="user_nickname_section">
-          <label>비밀번호</label>
-          <input type="password" name="user_password" required />
-        </div>
-        <div class="user_nickname_section">
-          <label>비밀번호 확인</label>
-          <input type="password" name="user_password" required />
+<!--
+  <script type="text/javascript">
+    function changeForm(val) {
+      if (val == "0") {
+        location.href = ".jsp"; //회원정보수정 jsp연결
+      } else if (val == "1") {
+        location.href = ".jsp"; //로그인된 home.jsp연결
+      } else if (val == "2") {
+        location.href = ".jsp"; //회원탈퇴 jsp연결
+      }
+    }
+  </script>
+
+-->
+    <!--
+      <%
+
+        String id = session.getAttribute("sessionID").toString();
+        
+        // 세션에 저장된 아이디를 가져와서
+        // 그 아이디 해당하는 회원정보를 가져온다.
+        MemberDAO dao = MemberDAO.getInstance();
+        MemberBean memberBean = dao.getUserInfo(id);
+      %>
+    -->
+    <!-- header -->
+    <div include-html="header.html"></div>
+
+    <main>
+      <div class="menu_sec" id="menu_sec">
+        <div class="menu_deco">
+          <div class="menu favorites mid" id="favorites">
+            <h3>즐겨찾기</h3>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <script>
+              includeHTML();
+            </script>
+          </div>
+          <div class="menu search_history mid" id="search_history">
+            <h3>내 검색 내역</h3>
+          </div>
+          <div class="menu star_review mid" id="star_review">
+            <h3>내 별점 후기</h3>
+          </div>
         </div>
       </div>
-      <div class="user_btns">
-        <button class="modify_btn">수정하기</button>
-      </div>
-    </div>
+
+
+      <section class="all_user_info">
+        <h1>
+          <i class="fas fa-won-sign"></i>
+          <a href="../../html/index.html">내 주변 경기도 지역화폐 가맹점</a>
+        </h1>
+        <h2>회원 정보</h2>
+        <hr class="line" />
+        <div id="modify_user_info" class="my_page_content">
+          <div class="user_column">
+            <div class="title title_space">아이디</div>
+            <div class="divider"></div>
+            <div class="info_content">abcd<!-- <%=memberBean.getId()%> --></div>
+          </div>
+
+          <div class="user_column">
+            <div class="title title_space">닉네임</div>
+            <div class="divider"></div>
+            <div class="info_content">
+              ㅎㅎ<!-- <%=memberBean.getNickname()%> -->
+            </div>
+          </div>
+
+          <div class="user_column">
+            <div class="title title_space">이메일</div>
+            <div class="divider"></div>
+            <div class="info_content">
+              <!-- <%=memberBean.getEmail1()%> -->huiogc1214
+              <div class="email_space">@</div>
+              <!-- <%=memberBean.getEmail2()%> -->gamil.com
+            </div>
+          </div>
+        </div>
+        <hr class="line" />
+
+          <div class="user_btns">
+            <div class="wrap_btns">
+              <input id="modify_btn" type="button" value="회원정보수정" onclick="changeForm(0)" />
+              <input id="cancel_btn" type="button" value="취소" onclick="changeForm(1)" />
+            </div>
+            <input id="delete_btn" type="button" value="회원탈퇴" onclick="changeForm(2)" />
+          </div>
+        </div>
+      </section>
+    </main>  
+    <footer></footer>
+    <script type="text/javascript" src="../../js/header.js"></script>
   </body>
 </html>

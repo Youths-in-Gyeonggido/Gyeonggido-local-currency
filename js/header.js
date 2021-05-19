@@ -3,10 +3,12 @@ window.onload = function() {
     const toggleBtn = document.querySelector('.navbar_toggleBtn');
     const navbarMenu = document.querySelector('.navbar_menu');
     
-    toggleBtn.addEventListener('click', () => {
-      navbarMenu.classList.toggle('active');
-    });
-  
+    //사용자 프로필
+    const userBtn=document.querySelector('.navbar_user');
+    const userMenu=document.querySelector('.user_menu');
+
+
+
     // 메뉴 화면
     const navFavorites = document.getElementById('nav_favorites');
     const navSearchHistory = document.getElementById('nav_search_history');
@@ -19,9 +21,19 @@ window.onload = function() {
     const favorites = document.getElementById('favorites');
     const searchHistory = document.getElementById('search_history');
     const starReview = document.getElementById('star_review');
+
     let menuArray = [0,0,0];
     
     console.log(menuSec);
+
+    toggleBtn.addEventListener('click', () => {
+      navbarMenu.classList.toggle('active');
+    });
+
+    userBtn.addEventListener('click',()=>{
+      userMenu.classList.toggle('active');
+    })
+  
   
     //즐겨찾기 버튼 클릭시
     navFavorites.addEventListener('click',()=>{

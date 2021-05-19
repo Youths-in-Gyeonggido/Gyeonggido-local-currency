@@ -45,11 +45,11 @@ h4 {
   background-color: white;
   border-radius: 10px;
   border: solid 1px #d1d1d1;
-  width: 38rem;
+  width: 600px;
   /* min-width: rem; */
-  max-width: 40rem;
-  padding: 0.5rem;
-  margin: 1rem 0.5rem;
+  max-width: 600px;
+  height: 350px;
+  margin: 10px 10px;
 }
 .section_content div {
   margin: 0.2rem;

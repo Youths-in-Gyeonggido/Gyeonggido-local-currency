@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="KR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>  
-  <body>
+     <!--
+      <%
+
+        String id = session.getAttribute("sessionID").toString();
+        
+        // 세션에 저장된 아이디를 가져와서
+        // 그 아이디 해당하는 회원정보를 가져온다.
+        MemberDAO dao = MemberDAO.getInstance();
+        MemberBean memberBean = dao.getUserInfo(id);
+      %>
+    -->
+
     <header>
       <nav class="navbar">
         <a href="#" class="navbar_toggleBtn">
@@ -22,10 +21,23 @@
           <li><a href="#" id="nav_star_review">내 별점 후기</a></li>
           <li><a href="#" id="nav_my_page">회원 정보</a></li>
         </ul>
-        <a href="../html/log_in.html" class="navbar_user">
-          <i class="fas fa-user-circle "></i></li>
-          <span class="user_name">USER</span></li>
-        </a>
+        <!-- 프로필 부분 -->
+        <div class="user_area">
+          <div class="navbar_user">
+            <i class="fas fa-user-circle"></i>
+            <span class="user_name">USER</span><!-- <%=memberBean.getId()%> -->
+          </div>
+          <div class="user_menu">
+            <i class="far fa-smile"></i>
+            <h3>경기청년들</h3><!-- <%=memberBean.getId()%> -->
+            <div class="log-out">
+              <span>
+                <i class="fas fa-sign-out-alt"></i>
+                LOG OUT
+              </span>
+            </div>  
+          </div>
+        </div>  
       </nav>
     </header>
   </body>

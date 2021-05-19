@@ -123,9 +123,18 @@ input {
   color: red;
   display: none;
 }
+/*
+#alertTxt2 {
+  position: absolute;
+  top: 16px;
+  right: 40px;
+  font-size: 12px;
+  color: rgb(139, 205, 243);
+  display: none;
+}
+*/
 
 /* 버튼 */
-
 .btn_area {
   margin: 30px 0 91px;
 }

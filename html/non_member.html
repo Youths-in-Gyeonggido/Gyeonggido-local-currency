@@ -16,92 +16,96 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript" src="../js/main.js"></script>
     <title>내 주변 경기도 지역화폐 가맹점</title>
     <style>
-        .status-bar {
-            display: flex;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 5px 15px;
-            background-color: #3498db;
-            z-index: 1;
-            font-weight: 500;
-            align-items: center;
-            color: #fff;
-        }
-        .logo span{
-            justify-items: right;
-        }
-        .status-bar__column {
-            flex: none;
-            align-items: center;
-        }
-        .status-bar__column i{
-            margin-right: 8px;
-            font-size: 0.9em;
-        }
-      
-        .login{
-            margin-left: auto;
-        }
-        .login a{
-            font-size:2em;
-            border-radius: 35px;
-            padding: 10px 13px;
-            background: #95cfff;
-            font-weight: 800;
-        }
-        .login a:hover{
-            background-color: #fff;
-        }
-        .search_sec{
-            margin-top: 30px;
-        }
-        .search_area_div{
-            font-size: 1.8em;
-        }
+      .main__header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        background-color: #3498db;
+        z-index: 1;
+      }
+      .title__column {
+        display: flex;
+        justify-content: center;
+        flex-grow: 2;
+        font-size: 4em;
+        font-weight: 800;
+      }
+      .title__column i {
+        margin-right: 2px;
+        color: #fff;
+      }
+      .title__column span {
+        color: #fff;
+      }
+      .login__column {
+        display: flex;
+        justify-content: right;
+      }
+      .login__column > a {
+        font-size: 2em;
+        border-radius: 5px;
+        padding: 10px 13px;
+        background: rgba(255, 255, 255, 0.267);
+        font-weight: 800;
+        color: rgb(6, 16, 29);
+        transition: all 0.3s;
+      }
+      .login__column a:hover {
+        background-color: #fff;
+      }
+      .search_sec {
+        margin-top: 30px;
+      }
+      .search_area_div {
+        font-size: 1.8em;
+      }
     </style>
   </head>
   <body>
-      <div class="status-bar">
-        <div class="status-bar__column logo">
+    <div class="main__header">
+      <div class="title__column">
+        <a href="non_member.html">
           <i class="fas fa-won-sign"></i>
-          <span>내 주변 경기도 지역화폐 가맹점</span>
+          <span> 주변 경기도 지역화폐 가맹점</span>
+        </a>
+      </div>
+      <div class="login__column">
+        <a href="../html/log_in.html">로그인</a>
+      </div>
+    </div>
+    <!-- main/search main -->
+    <div class="search_sec" id="search_sec">
+      <div class="search">
+        <div class="search_area_div">
+          <label>현재위치 :</label>
+          <label>경기도 수원시 장안구 율전동</label>
+          <button class="area_change_btn">위치변경</button>
         </div>
-        <div class="status-bar__column login">
-          <a href="../html/log_in.html">로그인</a>
+        <div class="search_select_div">
+          <select name="sectors" id="sectors-select">
+            <option value="">업종 선택</option>
+            <option value="">1</option>
+            <option value="">2</option>
+          </select>
+          <select name="sectors" id="sectors-select">
+            <option value="">반경 선택</option>
+            <option value="">1km</option>
+            <option value="">3km</option>
+            <option value="">5km</option>
+          </select>
+        </div>
+        <div class="search_button_div">
+          <button class="search_button">가맹점 검색</button>
         </div>
       </div>
-      <!-- main/search main -->
-      <div class="search_sec" id="search_sec">
-        <div class="search">
-          <div class="search_area_div">
-            <label>현재위치 :</label>
-            <label>경기도 수원시 장안구 율전동</label>
-            <button class="area_change_btn">위치변경</button>
-          </div>
-          <div class="search_select_div">
-            <select name="sectors" id="sectors-select">
-              <option value="">업종 선택</option>
-              <option value="">1</option>
-              <option value="">2</option>
-            </select>
-            <select name="sectors" id="sectors-select">
-              <option value="">반경 선택</option>
-              <option value="">1km</option>
-              <option value="">3km</option>
-              <option value="">5km</option>
-            </select>
-          </div>
-          <div class="search_button_div">
-            <button class="search_button">가맹점 검색</button>
-          </div>
-        </div>
-      </div>
-      <section class="map_sec">
-        <!-- <div id="map" style="width:500px;height:400px;"></div> -->
-        <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1cfbf7dc8c75f6cba5c6e5684a408d0e"></script>
+    </div>
+    <section class="map_sec">
+      <!-- <div id="map" style="width:500px;height:400px;"></div> -->
+      <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1cfbf7dc8c75f6cba5c6e5684a408d0e"></script>
       <script>
         var container = document.getElementById('map');
         var options = {
@@ -111,8 +115,7 @@
         var map = new window.kakao.maps.Map(container, options);
         console.log(container);
       </script> -->
-      </section>
-    </main>
+    </section>
     <!-- main -->
     <!-- footer start -->
     <footer></footer>

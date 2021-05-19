@@ -128,6 +128,7 @@ body::before {
 .caption a {
   font-size: 15px;
   color: black;
+  transition: all 0.3s;
 }
 .caption a:hover {
   color: #9da8b3;
