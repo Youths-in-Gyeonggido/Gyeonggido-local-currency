@@ -1,8 +1,5 @@
 @charset "EUC-KR";
 
-/* color{
-  blue : #3498db
-} */
 
 
 
@@ -126,6 +123,18 @@ select {
 .menu.search_history {
 }
 .menu.star_review {
+}
+
+/* loding 화면  */
+
+.loading-image {
+	position: absolute;
+  	z-index: 100;
+  	top:50%;
+  	left:50%;
+  	background-color: rgba( 255, 255, 255, 0.9 );
+  	border-radius: 100%;
+  	margin-left:-140px;
 }
 
 /* main_sec */

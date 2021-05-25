@@ -51,6 +51,8 @@
         </div>
       </div>
       <!-- main/search main -->
+      <img class="loading-image" src="../img/loadingImg.gif"></img>
+      
       <div class="main_sec" id="main_sec">
       	<div class="main_flex">
 	      <div class="search_sec" id="search_sec">
@@ -62,9 +64,9 @@
 	        </div>
 	        <div class="search">
 	          <div class="search_area_div">
-	            <label>현재위치 :</label>
-	            <label>경기도 수원시 장안구 율전동</label>
-	            <button class="area_change_btn">위치변경</button>
+	            <label id='locationLabel'>현재위치 :</label>
+	            <label id='userLocation'>경기도 수원시 장안구 율전동</label>
+	            <button class="area_change_btn" id='area_change_btn'>현재위치</button>
 	          </div>
 	          <div class="search_select_div">
 	            <select name="sectors" id="sectors-select">
@@ -87,87 +89,7 @@
 	      <div class="map_sec">
 	      <div class="map" id="map" ></div>
 			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2f696dcd122284d8212ec4dcee5b701f&libraries=services"></script>
-			<script>
-			
-				var container = document.getElementById('map');
-				var options = {
-					center: new kakao.maps.LatLng(37.27499050286018, 127.0089299711268),
-					level: 6
-				};
-		
-				var map = new kakao.maps.Map(container, options);
-				
-				// 주소-좌표 변환 객체
-				var geocoder = new kakao.maps.services.Geocoder();
-				
-
-				var marker1 = new kakao.maps.Marker(); // 클릭한 위치를 표시할 마커입니다
-				   
-
-				kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-				    searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-				        if (status === kakao.maps.services.Status.OK) {
-				            var detailAddr = !!result[0].road_address ? '<div>도로명주소 : ' + result[0].road_address.address_name + '</div>' : '';
-				            detailAddr += '<div>지번 주소 : ' + result[0].address.address_name + '</div>';
-				            
-				            var content = '<div class="bAddr">' +
-				                            '<span class="title">법정동 주소정보</span>' + 
-				                            detailAddr + 
-				                        '</div>';
-
-				            // 마커를 클릭한 위치에 표시합니다 
-				            marker1.setPosition(mouseEvent.latLng);
-				            marker1.setMap(map);
-
-				            console.log()
-				        }   
-				    });
-				});
-				
-				function searchDetailAddrFromCoords(coords, callback) {
-				    // 좌표로 법정동 상세 주소 정보를 요청합니다
-				    geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
-				}
-				
-				function searchAddrFromCoords(coords, callback) {
-				    // 좌표로 행정동 주소 정보를 요청합니다
-				    geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);         
-				}
-				var marker = new kakao.maps.Marker({ 
-				    // 지도 중심좌표에 마커를 생성합니다 
-				    position: map.getCenter() 
-				}); 
-				
-				console.log(map.getCenter()+'map.getCenter()');
-				marker.setMap(map);
-				
-				kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
-				    
-				    // 클릭한 위도, 경도 정보를 가져옵니다 
-				    var latlng = mouseEvent.latLng; 
-				    
-				    // 마커 위치를 클릭한 위치로 옮깁니다
-				    marker.setPosition(latlng);
-				    
-				    console.log('클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, 경도는 ' + latlng.getLng() + ' 입니다');
-				});
-				
-				if (navigator.geolocation){
-					navigator.geolocation.getCurrentPosition(function(position) {
-				        
-				        var lat = position.coords.latitude, // 위도
-				            lon = position.coords.longitude; // 경도
-				        
-				        var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-				            message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
-				       console.log(locPosition);
-				            
-				       map.setCenter(locPosition);
-				       marker.setMap(map);
-				      });
-				}
-			</script>
-	      	<!-- <script type="text/javascript" src="../js/kakaomap.js"></script> -->
+			<script type="text/javascript" src="../js/kakao_map.js"></script>
 	      </div>
 	    </div>
      </div>
