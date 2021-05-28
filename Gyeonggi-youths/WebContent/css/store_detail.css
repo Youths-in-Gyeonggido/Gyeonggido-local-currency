@@ -5,6 +5,7 @@
   justify-content: center;
   background-color: white;
   margin-top: 15px;
+  min-width: 300px;
 }
 
 .store_detail > * {
@@ -128,4 +129,22 @@
 /* 공유하기 */
 .store_buttons_div:last-child {
   color: #3498db;
+}
+
+@media screen and (max-width: 768px) {
+  .store_detail {
+    font-size: 1.7rem;
+  }
+  .store_name {
+    font-size: 2rem;
+  }
+  .store_buttons_div button {
+    font-size: 1.5rem;
+    width: 7rem;
+    height: 3rem;
+  }
+  .store_buttons_div i {
+    font-size: 3rem;
+    cursor: pointer;
+  }
 }

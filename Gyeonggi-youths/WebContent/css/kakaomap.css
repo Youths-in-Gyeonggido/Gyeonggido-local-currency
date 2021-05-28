@@ -1,8 +1,14 @@
 @charset "UTF-8";
 
-.map{
-	margin-top:50px;
-	width:100vw;
-	height:70vh;	
-	background-color:#add2f1;
+.map {
+  margin-top: 40px;
+  width: 100vw;
+  height: 70vh;
+  background-color: #add2f1;
+}
+
+@media screen and (max-width: 768px) {
+  .map {
+    margin-top: 10px;
+  }
 }

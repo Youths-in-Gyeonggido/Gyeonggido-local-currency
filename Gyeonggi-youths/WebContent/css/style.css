@@ -1,8 +1,5 @@
 @charset "EUC-KR";
 
-
-
-
 html {
   font-size: 10px;
   font-family: "Noto Sans KR", sans-serif;
@@ -43,6 +40,7 @@ select {
 }
 
 /* navbar */
+
 .navbar {
   height: 45px;
   display: flex;
@@ -98,8 +96,8 @@ select {
   display: block;
   float: left;
   width: 30vw;
-  height:100vh;
-  
+  height: 100vh;
+
   background-color: #ddf1ff;
   overflow: auto;
 }
@@ -114,55 +112,44 @@ select {
   display: block;
 }
 
-/* .mid{
-    display: flex;
-    justify-content: center;
-  } */
-.menu.favorites {
-}
-.menu.search_history {
-}
-.menu.star_review {
-}
-
 /* loding 화면  */
 
 .loading-image {
-  	display: none;
+  display: none;
 }
 
 .loading-image.active {
-	position: absolute;
-  	z-index: 100;
-  	top:50%;
-  	left:50%;
-  	background-color: rgba( 255, 255, 255, 0.9 );
-  	border-radius: 100%;
-  	margin-left:-140px;
-	display: block;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 100%;
+  margin-left: -140px;
+  display: block;
 }
 
 /* main_sec */
 main {
   font-size: 1.8rem;
- /*  display: flex;
+  /*  display: flex;
   justify-content: center;
   flex-direction:column; */
   height: 100vh;
 }
-.main_sec{
-  height:100vh;
+.main_sec {
+  height: 100vh;
 }
 .main_sec.menu_active {
   float: right;
   /* overflow: auto; */
-  width:65vw; 
+  width: 65vw;
 }
 
-.main_flex{
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
+.main_flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .search > div {
   display: flex;
@@ -209,10 +196,9 @@ main {
   background: #3498db;
 }
 
-.map_sec{
-	display:flex;
-	justify-content: center;
-	
+.map_sec {
+  display: flex;
+  justify-content: center;
 }
 
 /* 반응형 */

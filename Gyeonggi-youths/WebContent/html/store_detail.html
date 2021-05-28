@@ -65,9 +65,9 @@
     <div class="store_info_div">
       <ul class="store_info_ul">
         <li class="store_text">업종</li>
-        <li class="store_info" id="store_sector">미용/메이크업</li>
+        <li class="store_info" id="store_sector">가맹점 업종이 표시될 자리 입니다.</li>
         <li class="store_text">주소</li>
-        <li class="store_info" id="store_addr">경기도 수원시 장안구 율전동 100</li>
+        <li class="store_info" id="store_addr">가맹점 주소가 표시될 자리 입니다.</li>
       </ul>
     </div>
 
@@ -87,16 +87,17 @@
     </div>
 
     <div class="store_buttons_div">
-      <!-- <i class="fas fa-heart"></i> 꽉찬하트-->
       <i class="fas fa-heart"></i>
       <button id="find_road">길찾기</button>
-      <i class="fas fa-share-alt-square"></i>
+      <span id="share_kakao"><i class="fas fa-share-alt-square" ></i></span>
     </div>
   </div>
   <!-- map -->
   <div class="map_sec">
-    <div class="map" id="map"></div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=09d4013e9dc889444efa75d14ae9cbed"></script>
-    <script type="text/javascript" src="../js/kakaomap.js"></script>
+	<div class="map" id="map"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2f696dcd122284d8212ec4dcee5b701f&libraries=services"></script>
+	<script type="text/javascript" src="../js/kakao_map.js"></script>
   </div>
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script src="../js/share_kakao.js"></script>
 </html>
