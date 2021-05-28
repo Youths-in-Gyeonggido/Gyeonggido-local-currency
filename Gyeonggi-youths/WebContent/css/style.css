@@ -128,6 +128,10 @@ select {
 /* loding 화면  */
 
 .loading-image {
+  	display: none;
+}
+
+.loading-image.active {
 	position: absolute;
   	z-index: 100;
   	top:50%;
@@ -135,6 +139,7 @@ select {
   	background-color: rgba( 255, 255, 255, 0.9 );
   	border-radius: 100%;
   	margin-left:-140px;
+	display: block;
 }
 
 /* main_sec */

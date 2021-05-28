@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="KR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/store_list.css" />
+  <link rel="stylesheet" href="../css/kakaomap.css" />
+  <link rel="stylesheet" href="../css/store_detail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+    crossorigin="anonymous"
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+  <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript" src="../js/includeHTML.js"></script>
+  <title>내 주변 경기도 지역화폐 가맹점</title>
+</head>
+<body>
+  <!-- header load -->
+  <div include-html="header.html"></div>
+  <script type="text/javascript" src="../js/header.js"></script>
+  <!-- menu -->
+  <div class="menu_sec" id="menu_sec">
+    <div class="menu_deco">
+      <div class="menu favorites mid" id="favorites">
+        <h3>즐겨찾기</h3>
+        <div include-html="store_list.html"></div>
+        <div include-html="store_list.html"></div>
+        <div include-html="store_list.html"></div>
+        <div include-html="store_list.html"></div>
+        <div include-html="store_list.html"></div>
+        <script>
+          includeHTML();
+        </script>
+      </div>
+      <div class="menu search_history mid" id="search_history">
+        <h3>내 검색 내역</h3>
+      </div>
+      <div class="menu star_review mid" id="star_review">
+        <h3>내 별점 후기</h3>
+      </div>
+    </div>
+  </div>
+  <!-- store detail -->
+  <div class="store_detail">
+    <!-- 점수 -->
+    <div class="star_div">
+      <span class="star_score">2.5</span>
+      <i class="fas fa-star"></i>
+    </div>
+
+    <div class="store_name_div">
+      <span class="store_name">가맹점 명</span>
+    </div>
+
+    <div class="store_info_div">
+      <ul class="store_info_ul">
+        <li class="store_text">업종</li>
+        <li class="store_info" id="store_sector">미용/메이크업</li>
+        <li class="store_text">주소</li>
+        <li class="store_info" id="store_addr">경기도 수원시 장안구 율전동 100</li>
+      </ul>
+    </div>
+
+    <div class="star_review_div">
+      <div class="rating">
+        <input type="radio" name="store_review" id="">
+        <input type="radio" name="store_review" id="">
+        <input type="radio" name="store_review" id="">
+        <input type="radio" name="store_review" id="">
+        <input type="radio" name="store_review" id="">
+        <input type="radio" name="store_review" id="">
+        <input type="radio" name="store_review" id="">
+        <input type="radio" name="store_review" id="">
+        <input type="radio" name="store_review" id="">
+        <input type="radio" name="store_review" id="">
+      </div>
+    </div>
+
+    <div class="store_buttons_div">
+      <!-- <i class="fas fa-heart"></i> 꽉찬하트-->
+      <i class="fas fa-heart"></i>
+      <button id="find_road">길찾기</button>
+      <i class="fas fa-share-alt-square"></i>
+    </div>
+  </div>
+  <!-- map -->
+  <div class="map_sec">
+    <div class="map" id="map"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=09d4013e9dc889444efa75d14ae9cbed"></script>
+    <script type="text/javascript" src="../js/kakaomap.js"></script>
+  </div>
+</html>

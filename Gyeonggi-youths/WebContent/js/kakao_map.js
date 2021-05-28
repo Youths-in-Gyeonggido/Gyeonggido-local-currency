@@ -59,7 +59,7 @@ if (navigator.geolocation) {
         
         // 마커와 인포윈도우를 표시합니다
         displayMarker(locPosition, message);
-        
+        marker.setMap(null);
         //사이트 접속 시 현재위치 html label 표시
         searchDetailAddrFromCoords(locPosition,function(result, status){
         	if (status === kakao.maps.services.Status.OK) {
@@ -73,6 +73,9 @@ if (navigator.geolocation) {
         
         //현재위치 버튼 클릭시 
         areaChangeBtn.onclick = function(event) {
+	
+			marker1.setMap(null);
+			
 			//현재위치 html label 표시
 	        searchDetailAddrFromCoords(locPosition,function(result, status){
 	        	if (status === kakao.maps.services.Status.OK) {
