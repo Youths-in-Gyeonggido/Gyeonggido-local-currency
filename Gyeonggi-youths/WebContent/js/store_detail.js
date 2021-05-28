@@ -1,6 +1,6 @@
+//-------카카오톡 공유하기 기능
 const shareBtn = document.getElementById('share_kakao');
 
-console.log(shareBtn);
 shareBtn.addEventListener('click', () => {
 	console.log("공유하기버튼");
 	shareKakao();
@@ -9,7 +9,6 @@ shareBtn.addEventListener('click', () => {
 //가맹점 명과 주소 넣어주세요!
 let storeName = "가맹점 명"
 let storeAddress = "가맹점 주소";
-
 
 function shareKakao() {
 	// 사용할 앱의 JavaScript 키 설정
@@ -30,3 +29,18 @@ function shareKakao() {
 		}
 	});
 }
+
+// ------길찾기기능
+const findRoadBtn = document.getElementById('find_road'); //길찾기 버튼
+
+//가맹점 위도와 경도 넣어주세요!!
+let lat = '37.402056', //위도
+	lon = '127.108212'; //경도
+
+//가맹점명, 위도, 경도 입력
+let link = 'https://map.kakao.com/link/to/'+ storeName + ',' + lat + ',' + lon;
+
+
+findRoadBtn.addEventListener('click', () => {
+	window.open(link);
+});
