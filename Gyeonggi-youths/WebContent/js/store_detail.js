@@ -21,7 +21,7 @@ function shareKakao() {
 		content: {
 			title: storeName,
 			description: storeAddress,
-			imageUrl:'http://www.sisaweekly.com/news/photo/202004/31524_47677_5735.jpg',
+			imageUrl: 'http://www.sisaweekly.com/news/photo/202004/31524_47677_5735.jpg',
 			link: { //공유할 링크 넣어주세요. (가맹점 정보)
 				mobileWebUrl: "http://localhost:8003/Gyeonggi-youths/html/store_detail.html",
 				webUrl: "http://localhost:8003/Gyeonggi-youths/html/store_detail.html"
@@ -38,8 +38,7 @@ let lat = '37.402056', //위도
 	lon = '127.108212'; //경도
 
 //가맹점명, 위도, 경도 입력
-let link = 'https://map.kakao.com/link/to/'+ storeName + ',' + lat + ',' + lon;
-
+let link = 'https://map.kakao.com/link/to/' + storeName + ',' + lat + ',' + lon;
 
 findRoadBtn.addEventListener('click', () => {
 	window.open(link);
