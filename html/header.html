@@ -1,44 +1,33 @@
-     <!--
-      <%
-
-        String id = session.getAttribute("sessionID").toString();
-        
-        // 세션에 저장된 아이디를 가져와서
-        // 그 아이디 해당하는 회원정보를 가져온다.
-        MemberDAO dao = MemberDAO.getInstance();
-        MemberBean memberBean = dao.getUserInfo(id);
-      %>
-    -->
-
-    <header>
-      <nav class="navbar">
-        <a href="#" class="navbar_toggleBtn">
-          <i class="fas fa-bars "></i>
-        </a>
-        <ul class="navbar_menu">
-          <li><a href="#" id="nav_favorites">즐겨찾기</a></li>
-          <li><a href="#" id="nav_search_history">내 검색내역</a></li>
-          <li><a href="#" id="nav_star_review">내 별점 후기</a></li>
-          <li><a href="#" id="nav_my_page">회원 정보</a></li>
-        </ul>
-        <!-- 프로필 부분 -->
-        <div class="user_area">
-          <div class="navbar_user">
-            <i class="fas fa-user-circle"></i>
-            <span class="user_name">USER</span><!-- <%=memberBean.getId()%> -->
-          </div>
-          <div class="user_menu">
-            <i class="far fa-smile"></i>
-            <h3>경기청년들</h3><!-- <%=memberBean.getId()%> -->
-            <div class="log-out">
-              <span>
-                <i class="fas fa-sign-out-alt"></i>
-                LOG OUT
-              </span>
-            </div>  
-          </div>
-        </div>  
-      </nav>
-    </header>
-  </body>
-</html>    
+<header>
+  <div class="wrap_header">
+    <nav class="navbar">
+      <a href="#" class="navbar_toggleBtn">
+        <i class="fas fa-bars"></i>
+      </a>
+      <ul class="navbar_menu">
+        <li><a href="#" id="nav_favorites">즐겨찾기</a></li>
+        <li><a href="#" id="nav_search_history">내 검색내역</a></li>
+        <li><a href="#" id="nav_my_page">회원 정보</a></li>
+      </ul>
+    </nav>
+    <!-- 프로필 부분 -->
+    <div class="user_area">
+      <div class="wrap_user">
+        <span class="user_icon"><i class="fas fa-user-circle"></i></span>
+        <span class="user_name">USER</span>
+        <!-- <%=memberBean.getId()%> -->
+      </div>
+      <div class="user_menu">
+        <i class="far fa-smile"></i>
+        <span>경기청년들</span>
+        <!-- <%=memberBean.getId()%> -->
+        <div class="log-out">
+          <button class="btn_log_out">
+            <i class="fas fa-sign-out-alt"></i>
+            LOG OUT
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

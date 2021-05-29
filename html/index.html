@@ -1,3 +1,7 @@
+<!--
+  <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+-->
 <!DOCTYPE html>
 <html lang="KR">
   <head>
@@ -22,8 +26,32 @@
     <title>내 주변 경기도 지역화폐 가맹점</title>
   </head>
   <body>
+    <!-- 로그인 되었으면 세션 얻어와서 userID에 넣기
+      <% 
+        String userID=null;
+        if(session.getAttribute("userID")!=null){ 
+          userID=(String)session.getAttribute("userID");
+        }
+      %>
+      -->
+
     <!-- header load -->
+
     <div include-html="header.html"></div>
+
+    <div class="out_modal">
+      <div class="modal_content">
+        <div class="modal_header">
+          <h2>로그아웃 하시겠습니까?</h2>
+          <button class="btn_close">&times;</button>
+        </div>
+        <div class="modal_answer">
+          <button class="ans_yes" type="button">YES</button>
+          <button class="ans_no" type="button">NO</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
 
     <!-- main start -->
     <main>
@@ -31,21 +59,41 @@
       <div class="menu_sec" id="menu_sec">
         <div class="menu_deco">
           <div class="menu favorites mid" id="favorites">
-            <h3>즐겨찾기</h3>
+            <div class="title_fix">
+              <h3>즐겨찾기</h3>
+            </div>
             <div include-html="store_list.html"></div>
             <div include-html="store_list.html"></div>
             <div include-html="store_list.html"></div>
             <div include-html="store_list.html"></div>
             <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+
+            <div class="modal">
+              <div class="modal_content">
+                <div class="modal_header">
+                  <h2>즐겨찾기를 해제하시겠습니까?</h2>
+                  <button class="btn_close">&times;</button>
+                </div>
+                <div class="modal_answer">
+                  <button class="ans_yes" type="button">YES</button>
+                  <button class="ans_no" type="button">NO</button>
+                </div>
+              </div>
+            </div>
+            <div class="overlay"></div>
+
             <script>
               includeHTML();
             </script>
           </div>
           <div class="menu search_history mid" id="search_history">
-            <h3>내 검색 내역</h3>
-          </div>
-          <div class="menu star_review mid" id="star_review">
-            <h3>내 별점 후기</h3>
+            <div class="title_fix all_dlt_btn">
+              <h3>내 검색 내역</h3>
+            </div>
           </div>
         </div>
       </div>
@@ -81,19 +129,19 @@
           </div>
         </div>
       </div>
-      <section class="map_sec">
+      <div class="map_sec">
         <!-- <div id="map" style="width:500px;height:400px;"></div> -->
         <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1cfbf7dc8c75f6cba5c6e5684a408d0e"></script>
-      <script>
-        var container = document.getElementById('map');
-        var options = {
-          center: new window.kakao.maps.LatLng(33.450701, 126.570667),
-          level: 3
-        };
-        var map = new window.kakao.maps.Map(container, options);
-        console.log(container);
-      </script> -->
-      </section>
+          <script>
+            var container = document.getElementById('map');
+            var options = {
+              center: new window.kakao.maps.LatLng(33.450701, 126.570667),
+              level: 3
+            };
+            var map = new window.kakao.maps.Map(container, options);
+            console.log(container);
+          </script> -->
+      </div>
     </main>
     <!-- main -->
     <!-- footer start -->

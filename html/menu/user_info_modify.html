@@ -39,7 +39,7 @@
     <div include-html="header.html"></div>
    
     <!-- header 상단 메뉴 -->
-    <main>
+    <!--<main>
       <div class="menu_sec" id="menu_sec">
         <div class="menu_deco">
           <div class="menu favorites mid" id="favorites">
@@ -60,7 +60,7 @@
             <h3>내 별점 후기</h3>
           </div>
         </div>
-      </div>
+      </div>-->
     
 
 
@@ -85,8 +85,9 @@
                       type="text"
                       id="id"
                       class="int"
-                      value="<%=memberBean.getId()%>"
-                      readonly/>
+                      value=""
+                      readonly/> <!-- 아이디를 변경 불가능 하므로 readonly사용 -->
+                      <!--value="<%=memberBean.getId()%>"-->
                     </div>
                   </div> 
                 </div>
@@ -104,9 +105,9 @@
                       id="pswd1"
                       class="int"
                       maxlength="20"
-                      value="<%=memberBean.getPassword1()%>"
+                      value=""
                       autocomplete="off"
-                      required/>
+                      required/><!--value="<%=memberBean.getPassword1()%>"-->
                       <span id="alertTxt">사용불가</span>
                       <img
                         src="../../img/m_icon_pass.png"
@@ -130,9 +131,9 @@
                       id="pswd2"
                       class="int"
                       maxlength="20"
-                      value="<%=memberBean.getPassword2()%>"
+                      value=""
                       autocomplete="off"
-                      required/>
+                      required/><!--value="<%=memberBean.getPassword2()%>"-->
                       <img
                       src="../../img/m_icon_check_disable.png"
                       id="pswd2_img1"
@@ -156,9 +157,9 @@
                       id="name"
                       class="int"
                       maxlength="20"
-                      value="<%=memberBean.getNickname()%>"
+                      value=""
                       autocomplete="off"
-                      required/>
+                      required/><!--value="<%=memberBean.getNickname()%>"-->
                     </div>
                     <span class="error_next_box"></span>
                   </div>  
@@ -174,8 +175,8 @@
                       id="email"
                       class="int"
                       maxlength="100"
-                      value="<%=memberBean.getEmail()%>"
-                      autocomplete="off"/>
+                      value=""
+                      autocomplete="off"/><!--value="<%=memberBean.getEmail()%>"-->
                     </div>
                     <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
                   </div>  
@@ -185,7 +186,7 @@
               
               <!--회원정보수정/취소 버튼-->
               <div class="wrap_btns">
-                <input id="modify_btn" type="submit" value="회원정보수정" onclick="changeForm(0)" />
+                <input id="modify_btn" type="submit" value="회원정보수정" onclick="alert('회원 정보 수정을 성공하였습니다.');" />
                 <input id="cancel_btn" type="button" value="취소하기" onclick="changeForm(1)" />
               </div> 
         </form>
