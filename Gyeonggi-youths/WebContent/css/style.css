@@ -60,6 +60,7 @@ select {
   padding: 8px 12px;
   font-size: 1.9rem;
   font-weight: 600;
+  width: 100%;
 }
 .navbar_toggleBtn {
   display: none;
@@ -97,7 +98,7 @@ select {
 /* user profile */
 .user_area {
   display: flex;
-  padding: 8px 12px;
+  /* padding: 8px 12px; */
   font-size: 1.7rem;
   font-weight: 500;
 }
@@ -109,7 +110,8 @@ select {
   padding: 8px 12px;
   color: white;
 }
-.wrap_user i {
+.wrap_user i,
+.wrap_user span {
   font-size: 2rem;
 }
 .wrap_user span {
@@ -146,7 +148,7 @@ select {
   transform: rotate(45deg);
 }
 .user_menu > i,
-span {
+.user_menu > span {
   display: block;
   font-size: 2rem;
 }
@@ -193,7 +195,7 @@ span {
   font-weight: bold;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  /* padding: 5px; */
 }
 /* 왼쪽 메뉴 화면 */
 .menu_sec {
@@ -345,7 +347,7 @@ span {
 
 /* 오른쪽 가맹점 검색 메인 화면 */
 main {
-  padding-top: 40px;
+  padding-top: 60px;
   width: 100%;
 }
 .search_sec {
@@ -361,7 +363,7 @@ main {
   padding-top: 10px;
 }
 .search_sec > i,
-span {
+.search_sec > span {
   display: inline;
 }
 .logo_a > span {

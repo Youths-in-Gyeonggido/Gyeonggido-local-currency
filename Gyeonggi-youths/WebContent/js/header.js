@@ -10,8 +10,6 @@ window.onload = function() {
   const userArea=document.querySelector('.user_area');
   const logoutBtn = document.querySelector('.btn_log_out');
 
-
-
   // 메뉴 화면
   const navFavorites = document.getElementById('nav_favorites');
   const navSearchHistory = document.getElementById('nav_search_history');
