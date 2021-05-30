@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원 탈퇴</title>
     <link rel="stylesheet" href="../css/user_delete.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <script type="text/javascript" src="../js/includeHTML.js"></script>
     <link
       rel="stylesheet"
@@ -44,40 +45,43 @@
         MemberBean memberBean = dao.getUserInfo(id);
       %>
     -->
+    
+    <div include-html="header.html"></div>
     <div id="wrap">
-        <div id="header">
-            <jsp:include page="Header.jsp" />
-        </div>
-        <div id="main">
-            <div class="delete_header">
-                <h1>
-                  <i class="fas fa-won-sign"></i>
-                  <a href="../html/index.html">내 주변 경기도 지역화폐 가맹점</a>
-                </h1>
-                <h2>회원 탈퇴</h2>
-                <form class="delete_form" action="#" method="post">
-                    <div class="wrap_border">
-                        <div class="user_column">
-                            <div class="user_name">
-                                <h3><!-- <%=memberBean.getId()%> --> AAA 님</h3>
-                                <p>회원 탈퇴를 원하시면 비밀번호를 입력해 주세요.</p>
-                            </div>
-                        </div>
-                        <!--비밀번호 입력-->
-                        <div class="user_column user_pw_column">
-                            <label class="control_label" for="password">비밀번호</label>
-                            <input class="form_control" type="password" id="password" name="password" required/>
-                        </div>
-                    </div>    
-                  <!--탈퇴/취소버튼-->
-                  <div class="user_btn_column">
-                    <input id="delete_btn" type="submit" value="회원탈퇴" onclick="alert('회원 탈퇴에 성공하였습니다.');"/>
-                    <input id="cancel_btn" type="button" value="취소" onclick="location.href='#'"/><!--회원정보 페이지로 이동-->
-                  </div>    
-                </form>
-        </div>
+      <!-- <div id="header">
+        <jsp:include page="Header.jsp" />
+      </div> -->
+      <div id="main">
+        <div class="delete_header">
+          <h1>
+            <i class="fas fa-won-sign"></i>
+            <a href="../html/index.html">내 주변 경기도 지역화폐 가맹점</a>
+          </h1>
+          <h2>회원 탈퇴</h2>
+          <form class="delete_form" action="#" method="post">
+            <div class="wrap_border">
+              <div class="user_column">
+                <div class="user_name">
+                  <h3><!-- <%=memberBean.getId()%> --> AAA 님</h3>
+                  <p>회원 탈퇴를 원하시면 비밀번호를 입력해 주세요.</p>
+                </div>
+              </div>
+              <!--비밀번호 입력-->
+              <div class="user_column user_pw_column">
+                <label class="control_label" for="password">비밀번호</label>
+                <input class="form_control" type="password" id="password" name="password" required/>
+              </div>
+            </div>    
+            <!--탈퇴/취소버튼-->
+            <div class="user_btn_column">
+              <input id="delete_btn" type="submit" value="회원탈퇴" onclick="alert('회원 탈퇴에 성공하였습니다.');"/>
+              <input id="cancel_btn" type="button" value="취소" onclick="location.href='#'"/><!--회원정보 페이지로 이동-->
+            </div>    
+          </form>
+        </div><!--delete_header-->
         <div id="footer"></div>
-    </div>
+      </div> <!--main-->
+    </div> <!--wrap-->
     <script type="text/javascript" src="../js/header.js"></script>
   </body>
 </html>
