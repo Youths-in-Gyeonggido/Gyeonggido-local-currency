@@ -1,0 +1,141 @@
+:root {
+  --body-background-color: #f5f6f7;
+  --font-color: #4e4e4e;
+  --border-gray-color: #dadada;
+  --main-blue-color: #3498db;
+  --main-blue-border-color: #2693db;
+  --main-blue-hover-color: #053864d5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.delete_header {
+  align-content: center;
+  position: relative;
+  z-index: 2;
+}
+.delete_header h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.delete_header h1 a {
+  color: black;
+}
+.delete_header h2 {
+  font-size: 2em;
+  color: var(--main-blue-color);
+  columns: #fff;
+  text-align: center;
+  margin-bottom: 80px;
+  padding: 0 20px;
+}
+.delete_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrap_border {
+  border: 2px solid rgb(134, 183, 223);
+  background-color: rgba(54, 134, 255, 0.075);
+  border-radius: 5px;
+  padding: 60px 20px;
+}
+.user_name {
+  padding: 0 30px;
+}
+.user_name h3 {
+  font-size: 25px;
+}
+.user_name p {
+  padding-top: 15px;
+  font-size: 20px;
+}
+.user_column {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+}
+.user_pw_column {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+.user_pw_column .control_label {
+  margin-right: 10px;
+}
+.user_pw_column .form_control {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid rgb(188, 188, 189);
+  padding: 5px 0;
+  font-size: 15px;
+}
+.user_pw_column input {
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease-in-out;
+}
+.user_pw_column input::placeholder {
+  opacity: 0.7;
+}
+.user_pw_column input:focus {
+  border-color: rgb(27, 107, 228);
+}
+.user_btn_column {
+  margin-top: 40px;
+}
+.user_btn_column input {
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 3px;
+  margin: 0 4px;
+}
+
+#cancel_btn {
+  width: 86px;
+  border: 1px solid rgb(167, 167, 167);
+  background-color: rgb(167, 167, 167);
+  transition: all 0.3s;
+}
+#cancel_btn:hover {
+  background-color: rgb(110, 107, 107);
+}
+#delete_btn {
+  border: 1px solid #5e5c5c42;
+  background-color: #09203f42;
+  transition: all 0.3s;
+}
+#delete_btn:hover {
+  background-color: #0b266b8f;
+}

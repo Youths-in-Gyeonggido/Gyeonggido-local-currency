@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="testMapper">
+	<resultMap id="User" type="com.test.dto.UserDTO">
+		<result property="id" column="id" />
+		<result property="passWord" column="passWord" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+	</resultMap>
+
+
+	<!-- 로그인 -->
+	<select id="Login" parameterType="com.test.dto.UserDTO"
+		resultMap="User">
+		select * from test_member2
+		where id = #{id} and passWord = #{passWord}
+	</select>
+
+
+	<!-- 회원가입 -->
+	<insert id="signUp" parameterType="com.test.dto.UserDTO">
+		insert into test_member2
+		values(#{id},#{passWord},#{name},#{email})
+	</insert>
+
+	<!-- 중복확인 -->
+	<select id="idCheck" parameterType="String" resultType="int">
+		select
+		count(id) from test_member2 where id=#{id}
+	</select>
+
+	<!-- 회원정보 -->
+	<select id="mypage" parameterType="com.test.dto.UserDTO" resultMap="User">
+		select * from test_member2
+		where id=#{id} and passWord=#{passWord}
+	</select>
+	
+	<!--회원정보 수정-->
+	<update id="update" parameterType="com.test.dto.UserDTO">
+	update test_member2 set passWord=#{passWord},name=#{name},email=#{email}
+	where id=#{id} 
+	</update>
+	
+	<!--회원정보 삭제-->
+	<delete id ="delete" parameterType="com.test.dto.UserDTO">
+	delete from test_member2 where passWord=#{passWord}
+	</delete>
+</mapper>
