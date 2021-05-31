@@ -127,12 +127,14 @@ select {
   border-radius: 20px;
   transition: 0.5s;
   text-align: center;
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; */
   opacity: 0;
 }
 .user_area .user_menu.active {
   top: 80px;
-  visibility: visible;
+  display: block;
+  /* visibility: visible; */
   opacity: 1;
   cursor: pointer;
   z-index: 99;
@@ -253,12 +255,13 @@ select {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: -1;
   opacity: 0;
   transition: 0.5s;
 }
 .out_modal.active {
   opacity: 1;
+  z-index: 10;
 }
 
 /*즐겨찾기 해제 모달*/
@@ -268,12 +271,13 @@ select {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: -1;
   opacity: 0;
   transition: 0.5s;
 }
 .modal.active {
   opacity: 1;
+  z-index: 10;
 }
 .modal_content {
   border: 3px solid rgba(15, 103, 167, 0.404);
@@ -283,7 +287,7 @@ select {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.015);
   display: flex;
-  overflow: hidden;
+  overflow: none;
   flex-direction: column;
 }
 .modal_header {
@@ -331,11 +335,13 @@ select {
   left: 0;
   opacity: 0;
   transition: 0.5s;
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; */
 }
 .overlay.active {
   opacity: 1;
-  visibility: visible;
+  display: block;
+  /* visibility: visible; */
 }
 .btn_close {
   position: absolute;
@@ -360,7 +366,7 @@ main {
 .search > div {
   display: flex;
   justify-content: center;
-  padding-top: 10px;
+  padding-top: 8px;
 }
 .search_sec > i,
 .search_sec > span {
@@ -371,7 +377,7 @@ main {
 }
 
 .search_area_div * {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .search_area_div button {
@@ -390,7 +396,7 @@ main {
 .search_select_div select {
   padding: 3px;
   width: 200px;
-  margin-right: 10px;
+  margin: 0 5px;
   font-size: 1.5rem;
 }
 .search_button_div button {
@@ -416,9 +422,23 @@ main {
   background-color: rgb(252, 213, 106);
 }
 /* 반응형 */
-@media screen and (max-width: 768px) {
+
+/* 모바일 가로 */
+@media screen and (min-width: 480px) and (max-width: 768px) {
   html {
     font-size: 0.6rem;
+  }
+  body {
+    overflow: auto;
+  }
+  main {
+    padding-top: 30px;
+  }
+  .wrap_user {
+    padding: 3px;
+  }
+  .navbar {
+    padding: 5px 7px;
   }
   .navbar_menu {
     display: none;
@@ -429,6 +449,7 @@ main {
   .navbar_menu li {
     width: 80%;
     text-align: center;
+    font-size: 1.5rem;
   }
   .navbar.active {
     width: 100%;
@@ -455,7 +476,89 @@ main {
   .user_name {
     display: none;
   }
-  .logo {
-    font-size: 3.5rem;
+  .logo span,
+  .logo i {
+    font-size: 2.5rem;
+  }
+  .area_change_btn {
+    margin-left: 5px;
+  }
+  .search > div {
+    padding-top: 5px;
+  }
+} /* 모바일 가로 끝 */
+
+/* 모바일 세로 */
+@media all and (max-width: 479px) {
+  html {
+    font-size: 0.6rem;
+  }
+  body {
+    overflow: auto;
+  }
+  main {
+    padding-top: 30px;
+  }
+  .wrap_user {
+    padding: 3px;
+  }
+  .navbar {
+    padding: 5px 7px;
+  }
+  .navbar_menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar_menu li {
+    width: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .navbar.active {
+    width: 100%;
+  }
+  .navbar_menu.active {
+    display: flex;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .user_area.active {
+    display: none;
+  }
+  .navbar_toggleBtn {
+    display: block;
+    /* font-size: larger; */
+    color: white;
+    transition: all ease 0.5s;
+  }
+  .navbar_toggleBtn:hover {
+    transform: rotate(90deg);
+  }
+  .user_area {
+    padding: 0;
+  }
+  .user_name {
+    display: none;
+  }
+  .logo span,
+  .logo i {
+    font-size: 2.3rem;
+  }
+  .search_sec {
+    font-size: 1.5rem;
+  }
+  .area_change_btn {
+    margin-left: 5px;
+  }
+  .menu_sec.active {
+    width: 100%;
+  }
+  .search > div {
+    padding-top: 5px;
+  }
+
+  .search_sec {
+    /* display: none; */
   }
 }

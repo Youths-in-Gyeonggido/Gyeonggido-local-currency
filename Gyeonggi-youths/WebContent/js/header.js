@@ -22,10 +22,10 @@ window.onload = function() {
 
   //즐겨찾기 모달 변수 
   const favBtn = document.querySelector('.btn_store_fav');
-  const modal=document.querySelector('.modal');
-  const overlay=document.querySelector('.overlay');
-  const closeBtn=document.querySelector('.btn_close');
-  const ansNo=document.querySelector('.ans_no');
+  const modal = document.querySelector('.modal');
+  const overlay = document.querySelector('.overlay');
+  const closeBtn = document.querySelector('.btn_close');
+  const ansNo = document.querySelector('.ans_no');
 
   //로그아웃 모달 변수
   const outModal=document.querySelector('.out_modal');
@@ -84,7 +84,6 @@ window.onload = function() {
       searchSec.classList.remove('menu_active');
     }
   });
-}
 
   //즐겨찾기 해제 모달
   favBtn.addEventListener('click',()=>{
@@ -123,3 +122,4 @@ window.onload = function() {
     overlay.classList.remove('active');
   })
 
+}
