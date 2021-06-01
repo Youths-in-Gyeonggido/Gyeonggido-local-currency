@@ -18,10 +18,6 @@ userName.addEventListener("focusout", checkName);
 email.addEventListener("focusout", isEmailCorrect);
 
 
-
-
-
-
 /*콜백 함수*/
 
 //비밀번호 체크
@@ -37,26 +33,25 @@ function checkPw() {
         error[0].style.display = "block";
         pwMsg.style.color = "red";
         pwMsg.style.display = "block";
-        pwImg1.src = "../../img/m_icon_not_use.png";
+        pwImg1.src = "../img/m_icon_not_use.png";
     } else {
         error[0].style.display = "none";
         pwMsg.innerHTML = "안전";
         pwMsg.style.display = "block";
         pwMsg.style.color = "#3498db";
-        pwImg1.src = "../../img/m_icon_safe.png";
+        pwImg1.src = "../img/m_icon_safe.png";
     }
 }
 //비밀번호 확인 체크
 function comparePw() {
     if(pw2.value === pw1.value && pw2.value != "") {
-        pwImg2.src = "../../img/m_icon_check_enable.png";
+        pwImg2.src = "../img/m_icon_check_enable.png";
         error[1].style.display = "none";
     } else if(pw2.value !== pw1.value) {
-        pwImg2.src = "../../img/m_icon_check_disable.png";
+        pwImg2.src = "../img/m_icon_check_disable.png";
         error[1].innerHTML = "비밀번호가 일치하지 않습니다.";
         error[1].style.display = "block";
     } 
-
     if(pw2.value === "") {
         error[1].innerHTML = "필수 정보입니다.";
         error[1].style.display = "block";
@@ -78,8 +73,6 @@ function checkName() {
         error[2].style.display = "block";
     }
 }
-
-
 
 //이메일 체크
 function isEmailCorrect() {

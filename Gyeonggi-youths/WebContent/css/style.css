@@ -23,6 +23,7 @@ header {
   top: 0;
   box-sizing: border-box;
   background-color: #3498db;
+  z-index: 1;
 }
 
 a {
@@ -84,17 +85,6 @@ select {
   cursor: pointer;
 }
 
-/* 
-.navbar_user {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-.navbar_user i,
-.user_name {
-  padding: 5px;
-} */
-
 /* user profile */
 .user_area {
   display: flex;
@@ -137,7 +127,7 @@ select {
   /* visibility: visible; */
   opacity: 1;
   cursor: pointer;
-  z-index: 99;
+  z-index: 1;
 }
 .user_area .user_menu::before {
   content: "";
@@ -154,15 +144,15 @@ select {
   display: block;
   font-size: 2rem;
 }
+.user_menu > span {
+  padding: 10px;
+  font-weight: 600;
+}
 .user_menu .fa-smile {
   margin: 40px 0 10px 0;
   font-size: 9rem;
   color: #3498db;
 }
-.user_menu > span {
-  font-weight: 600;
-}
-
 .log-out {
   display: flex;
   justify-content: center;
@@ -173,9 +163,8 @@ select {
   font-size: 2rem;
   font-weight: 600;
   display: flex;
-  justify-items: center;
   align-items: center;
-  padding-top: 20px;
+  padding: 5px;
   cursor: pointer;
 }
 .log-out i {
@@ -186,9 +175,7 @@ select {
 .btn_log_out:hover {
   background-color: rgba(255, 255, 255, 0.644);
   border-radius: 5px;
-  padding: 3px 4px 3px 1px;
   cursor: pointer;
-  transition: all 0.5s;
 }
 
 /* logo */
@@ -197,7 +184,6 @@ select {
   font-weight: bold;
   display: flex;
   justify-content: center;
-  /* padding: 5px; */
 }
 /* 왼쪽 메뉴 화면 */
 .menu_sec {
@@ -231,12 +217,11 @@ select {
   text-align: center;
   font-size: 2rem;
 }
-/* loding 화면  */
 
+/* loding 화면  */
 .loading-image {
   display: none;
 }
-
 .loading-image.active {
   position: absolute;
   z-index: 100;
@@ -341,6 +326,7 @@ select {
 .overlay.active {
   opacity: 1;
   display: block;
+  z-index: 1;
   /* visibility: visible; */
 }
 .btn_close {
@@ -375,11 +361,9 @@ main {
 .logo_a > span {
   font-size: 40px;
 }
-
 .search_area_div * {
   margin-right: 5px;
 }
-
 .search_area_div button {
   background: #c4c2c2;
   border-radius: 15px;
@@ -557,7 +541,6 @@ main {
   .search > div {
     padding-top: 5px;
   }
-
   .search_sec {
     /* display: none; */
   }
