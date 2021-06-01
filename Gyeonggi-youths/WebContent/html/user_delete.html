@@ -20,32 +20,7 @@
       crossorigin="anonymous"
     />
   </head>
-<!--
-  <script type="text/javascript">
-    function changeForm(val) {
-      if (val == "0") {
-        location.href = ".jsp"; //회원정보수정 jsp연결
-      } else if (val == "1") {
-        location.href = ".jsp"; //로그인된 home.jsp연결
-      } else if (val == "2") {
-        location.href = ".jsp"; //회원탈퇴 jsp연결
-      }
-    }
-  </script>
--->
   <body>
-    <!--
-      <%
-
-        String id = session.getAttribute("sessionID").toString();
-        
-        // 세션에 저장된 아이디를 가져와서
-        // 그 아이디 해당하는 회원정보를 가져온다.
-        MemberDAO dao = MemberDAO.getInstance();
-        MemberBean memberBean = dao.getUserInfo(id);
-      %>
-    -->
-    
     <div include-html="header.html"></div>
     <div id="wrap">
       <!-- <div id="header">
@@ -74,7 +49,7 @@
             </div>    
             <!--탈퇴/취소버튼-->
             <div class="user_btn_column">
-              <input id="delete_btn" type="submit" value="회원탈퇴" onclick="alert('회원 탈퇴에 성공하였습니다.');"/>
+              <input id="delete_btn" type="submit" value="회원탈퇴"/>
               <input id="cancel_btn" type="button" value="취소" onclick="location.href='#'"/><!--회원정보 페이지로 이동-->
             </div>    
           </form>
