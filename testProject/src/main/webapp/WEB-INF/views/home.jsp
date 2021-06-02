@@ -73,7 +73,7 @@ request.setCharacterEncoding("utf-8");
 		<div class="map_sec">
 			<div class="map" id="map">
 				<script type="text/javascript"
-					src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8f8cb5e0381eae0cd429bbaa5520d9ef"></script>
+					src="//dapi.kakao.com/v2/maps/sdk.js?appkey="></script>
 				<script>
 					var container = document.getElementById('map');
 					var options = {
