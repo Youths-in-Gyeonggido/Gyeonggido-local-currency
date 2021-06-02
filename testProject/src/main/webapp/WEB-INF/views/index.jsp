@@ -27,16 +27,17 @@ request.setCharacterEncoding("utf-8");
 <script type="text/javascript" src="/resources/js/includeHTML.js"></script>
 <title>내 주변 경기도 지역화폐 가맹점</title>
 </head>
-<body>	
-
- <div id="header">
-            <jsp:include page="/resources/html/header2.jsp" />
-        </div>
+<body>
 	<!-- header load -->
+	<div id="header">
+		<jsp:include page="/resources/html/header2.jsp" />
+	</div>
+	<!-- logout modal load -->
 	<div class="out_modal">
 		<div class="modal_content">
 			<div class="modal_header">
 				<h2>로그아웃 하시겠습니까?</h2>
+				<button class="btn_close">&times;</button>
 			</div>
 			<div class="modal_answer">
 				<button class="ans_yes" type="button">YES</button>
@@ -52,7 +53,9 @@ request.setCharacterEncoding("utf-8");
 		<div class="menu_sec" id="menu_sec">
 			<div class="menu_deco">
 				<div class="menu favorites mid" id="favorites">
-					<h3>즐겨찾기</h3>
+					<div class="title_fix">
+						<h3>즐겨찾기</h3>
+					</div>
 					<div include-html="/resources/html/store_list.html"></div>
 					<div include-html="/resources/html/store_list.html"></div>
 					<div include-html="/resources/html/store_list.html"></div>
@@ -63,52 +66,53 @@ request.setCharacterEncoding("utf-8");
 					</script>
 				</div>
 				<div class="menu search_history mid" id="search_history">
-					<h3>내 검색 내역</h3>
-				</div>
-				<div class="menu star_review mid" id="star_review">
-					<h3>내 별점 후기</h3>
+					<div class="title_fix">
+						<h3>내 검색 내역</h3>
+					</div>
 				</div>
 				<div class="menu my_page mid" id="mypage">
 					<h3>회원 정보</h3>
 				</div>
 			</div>
 		</div>
+
+		<!-- loading image -->
+
 		<!-- main/search main -->
-		<div class="main_sec" id="main_sec">
-			<div class="main_flex">
-				<div class="search_sec" id="search_sec">
-					<div class="logo">
-						<a class="logo_a" href="index.html"> <i
-							class="fas fa-won-sign"></i> <span>내 주변 경기도 지역화폐 가맹점</span>
-						</a>
-					</div>
-					<div class="search">
-						<div class="search_area_div">
-							<label>현재위치 :</label> <label>경기도 수원시 장안구 율전동</label>
-							<button class="area_change_btn">위치변경</button>
-						</div>
-						<div class="search_select_div">
-							<select name="sectors" id="sectors-select">
-								<option value="">업종 선택</option>
-								<option value="">1</option>
-								<option value="">2</option>
-							</select> <select name="sectors" id="sectors-select">
-								<option value="">반경 선택</option>
-								<option value="">1km</option>
-								<option value="">3km</option>
-								<option value="">5km</option>
-							</select>
-						</div>
-						<div class="search_button_div">
-							<button class="search_button">가맹점 검색</button>
-						</div>
-					</div>
+		<div class="search_sec" id="search_sec">
+			<div class="logo">
+				<a class="logo_a" href="#"> <i class="fas fa-won-sign"></i> <span>내
+						주변 경기도 지역화폐 가맹점</span>
+				</a>
+			</div>
+			<div class="search">
+				<div class="search_area_div">
+					<label>현재위치 :</label> <label>경기도 수원시 장안구 율전동</label>
+					<button class="area_change_btn">위치변경</button>
 				</div>
-				<div class="map_sec">
-					<div class="map" id="map"></div>
-					<script type="text/javascript"
-						src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8f8cb5e0381eae0cd429bbaa5520d9ef"></script>
-					<script>
+				<div class="search_select_div">
+					<select name="sectors" id="sectors-select">
+						<option value="">업종 선택</option>
+						<option value="">1</option>
+						<option value="">2</option>
+					</select> <select name="sectors" id="sectors-select">
+						<option value="">반경 선택</option>
+						<option value="">1km</option>
+						<option value="">3km</option>
+						<option value="">5km</option>
+					</select>
+				</div>
+				<div class="search_button_div">
+					<button class="search_button">가맹점 검색</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="map_sec">
+			<div class="map" id="map"></div>
+			<script type="text/javascript"
+				src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8f8cb5e0381eae0cd429bbaa5520d9ef"></script>
+			<script>
 						var container = document.getElementById('map');
 						var options = {
 							center : new kakao.maps.LatLng(37.27499050286018,
@@ -158,10 +162,8 @@ request.setCharacterEncoding("utf-8");
 										marker.setMap(map);
 									});
 						}
-					</script>
-					<!-- <script type="text/javascript" src="../js/kakaomap.js"></script> -->
-				</div>
-			</div>
+				</script>
+			<!-- <script type="text/javascript" src="../js/kakaomap.js"></script> -->
 		</div>
 	</main>
 	<!-- main -->

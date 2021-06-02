@@ -26,6 +26,8 @@ public class HomeController {
 	@Autowired
 	UserServiceImpl userService;
 	
+	//@Autowired
+	//bcryptPasswordEncoder pwdEncoder;
 
 	@GetMapping("/")
 	public String MainPage() {
@@ -33,10 +35,10 @@ public class HomeController {
 		return "home";
 	}
 	@GetMapping("index")
-	public String index() {
-		
+	public String index() {		
 		return "index";
 	}
+	
 	@PostMapping("login")
 	public String Login(HttpServletRequest request,UserDTO dto,Model model) {
 		HttpSession session = request.getSession();
@@ -46,6 +48,7 @@ public class HomeController {
 
 		if(login==null) {
 			System.out.println("아이디 없음");
+			
 			return "signup";
 		}
 		else{
@@ -73,6 +76,7 @@ public class HomeController {
 
 	@PostMapping("/regist_Member")
 	public String signUp(UserDTO dto) {
+		//dto.setassWord(pwdEncoder.encode(dto.getPassWord()));
 		userService.SignUp(dto);
 		return "index";
 	}
