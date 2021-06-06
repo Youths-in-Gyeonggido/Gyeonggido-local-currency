@@ -1,0 +1,314 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+html {
+  font-size: 10px;
+  font-family: "Noto Sans KR", sans-serif;
+  /* min-width: 100rem; */
+}
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+  background-color: #3498db;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  cursor: pointer;
+  outline: none;
+  border-color: rgba(153, 153, 153, 0.527);
+}
+/* header */
+.main__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  background-color: #3498db;
+  z-index: 1;
+}
+.title__column {
+  display: flex;
+  justify-content: center;
+  flex-grow: 2;
+  font-size: 4em;
+  font-weight: 800;
+}
+.title__column i {
+  margin-right: 2px;
+  color: #fff;
+}
+.title__column span {
+  color: #fff;
+}
+
+/* 로그인 버튼 */
+.login__column {
+  display: flex;
+  justify-content: right;
+}
+.login__column > a {
+  font-size: 2em;
+  border-radius: 5px;
+  padding: 11px 15px;
+  background: rgba(255, 255, 255, 0.267);
+  font-weight: 800;
+  color: rgb(6, 16, 29);
+  transition: all 0.3s;
+}
+.login__column a:hover {
+  background-color: #fff;
+}
+.search_area_div {
+  font-size: 1.8em;
+}
+
+/* loding 화면  */
+.loading-image {
+  display: none;
+}
+.loading-image.active {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 100%;
+  margin-left: -140px;
+  display: block;
+}
+
+/* 가맹점 검색 메인 화면 */
+main {
+  /*padding-top: 60px;*/
+  width: 100%;
+}
+.search_sec {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 0 40px 0;
+}
+.search > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+}
+.search > div:first-child {
+  padding-top: 0;
+}
+.search_sec > i,
+.search_sec > span {
+  display: inline;
+}
+.logo_a > span {
+  font-size: 40px;
+}
+.search_area_div * {
+  margin-right: 5px;
+  font-weight: 600;
+}
+.search_area_div button {
+  background: #c4c2c2;
+  border-radius: 15px;
+  color: white;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 7px 5px;
+  width: 8rem;
+  transition: all 0.3s;
+}
+.search_area_div button:hover {
+  background: #1abc9c;
+}
+.search_select_div select {
+  padding: 3px;
+  width: 200px;
+  margin: 0 5px;
+  font-size: 1.5rem;
+}
+.search_button_div button {
+  background: #c4c2c2;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 15rem;
+  height: 4rem;
+  transition: all 0.3s;
+}
+
+.search_button_div button:hover {
+  background: #3498db;
+}
+/* 반응형 */
+
+/* 모바일 가로 */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  html {
+    font-size: 0.6rem;
+  }
+  body {
+    overflow: auto;
+  }
+  main {
+    padding-top: 30px;
+  }
+  .wrap_user {
+    padding: 3px;
+  }
+  .navbar {
+    padding: 5px 7px;
+  }
+  .navbar_menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar_menu li {
+    width: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .navbar.active {
+    width: 100%;
+  }
+  .navbar_menu.active {
+    display: flex;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .user_area.active {
+    display: none;
+  }
+  .navbar_toggleBtn {
+    display: block;
+    font-size: larger;
+    color: white;
+    transition: all ease 0.5s;
+  }
+  .navbar_toggleBtn:hover {
+    transform: rotate(90deg);
+  }
+  .user_area {
+    padding: 0;
+  }
+  .user_name {
+    display: none;
+  }
+  .logo span,
+  .logo i {
+    font-size: 2.5rem;
+  }
+  .area_change_btn {
+    margin-left: 5px;
+  }
+  .search > div {
+    padding-top: 5px;
+  }
+} /* 모바일 가로 끝 */
+
+/* 모바일 세로 */
+@media all and (max-width: 479px) {
+  html {
+    font-size: 0.6rem;
+  }
+  body {
+    overflow: auto;
+  }
+  main {
+    padding-top: 30px;
+  }
+  .wrap_user {
+    padding: 3px;
+  }
+  .navbar {
+    padding: 5px 7px;
+  }
+  .navbar_menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar_menu li {
+    width: 80%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .navbar.active {
+    width: 100%;
+  }
+  .navbar_menu.active {
+    display: flex;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .user_area.active {
+    display: none;
+  }
+  .navbar_toggleBtn {
+    display: block;
+    /* font-size: larger; */
+    color: white;
+    transition: all ease 0.5s;
+  }
+  .navbar_toggleBtn:hover {
+    transform: rotate(90deg);
+  }
+  .user_area {
+    padding: 0;
+  }
+  .user_name {
+    display: none;
+  }
+  .logo span,
+  .logo i {
+    font-size: 2.3rem;
+  }
+  .search_sec {
+    font-size: 1.5rem;
+  }
+  .area_change_btn {
+    margin-left: 5px;
+  }
+  .menu_sec.active {
+    width: 100%;
+  }
+  .search > div {
+    padding-top: 5px;
+  }
+  .search_sec {
+    /* display: none; */
+  }
+}

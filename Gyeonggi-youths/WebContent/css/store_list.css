@@ -38,7 +38,7 @@ a {
   width: 600px;
   /* min-width: rem; */
   max-width: 410px;
-  height: 100%;
+  height: 130px;
   margin: 0 0 25px 0;
   padding: 15px;
   font-size: 2.4rem;
@@ -107,4 +107,22 @@ a {
 }
 .store_detail:hover {
   background-color: rgb(172, 180, 184);
+}
+
+@media all and (max-width: 479px) {
+  .store_info span {
+    font-size: 2rem;
+  }
+  .store_info span:last-child {
+    font-size: 1.4rem;
+  }
+  .section_content {
+    font-size: 2rem;
+  }
+  .fa-heart {
+    font-size: 2.5rem;
+  }
+  .store_detail {
+    font-size: 1.3rem;
+  }
 }

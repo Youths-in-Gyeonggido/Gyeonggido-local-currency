@@ -21,14 +21,16 @@ window.onload = function() {
   const searchHistory = document.getElementById('search_history');
 
   //즐겨찾기 모달 변수 
-  const favBtn = document.querySelector('.btn_store_fav');
-  const modal = document.querySelector('.modal');
-  const overlay = document.querySelector('.overlay');
-  const closeBtn = document.querySelector('.btn_close');
-  const ansNo = document.querySelector('.ans_no');
+  const favBtn = document.getElementById('btn_store_fav');
+  const modal = document.getElementById('modal');
+  const overlay = document.getElementById('overlay');
+  const closeBtn = document.getElementById('btn_close');
+  const ansNo = document.getElementById('ans_no');
 
   //로그아웃 모달 변수
-  const outModal=document.querySelector('.out_modal');
+  const outModal = document.getElementById('out_modal');
+  const outCloseBtn = document.getElementById('out_btn_close');
+  const outAnsNo = document.getElementById('out_ans_no');
 
   let menuArray = [0,0];
   
@@ -109,7 +111,7 @@ window.onload = function() {
     overlay.classList.add('active');
     userMenu.classList.remove('active');
   })
-  closeBtn.addEventListener('click',()=>{
+  outCloseBtn.addEventListener('click',()=>{
     outModal.classList.remove('active');
     overlay.classList.remove('active');
   })
@@ -117,7 +119,7 @@ window.onload = function() {
     outModal.classList.remove('active');
     overlay.classList.remove('active');
   })
-  ansNo.addEventListener('click',()=>{
+  outAnsNo.addEventListener('click',()=>{
     outModal.classList.remove('active');
     overlay.classList.remove('active');
   })

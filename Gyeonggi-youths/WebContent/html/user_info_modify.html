@@ -16,10 +16,9 @@
     <title>회원 정보 수정</title>
   </head>
   <body>
-
     <!-- header -->
     <div include-html="header.html"></div>
-    <script type="text/javascript" src="../js/header.js"></script> 
+    <script type="text/javascript" src="../js/header.js"></script>
     <!-- header 상단 메뉴 -->
     <main>
       <div class="menu_sec" id="menu_sec">
@@ -45,7 +44,6 @@
         </div>
       </div>
 
-    <!-- 회원 정보 수정 form -->
       <!-- 회원 정보 수정 form -->
       <section class="all_user_info">
         <div class="all_user_info_wrap">
@@ -55,7 +53,7 @@
           </h1>
           <h2>회원 정보 수정</h2>
           <hr />
-          <form class="all_form" action="#" method="post">
+          <form id="all_form" action="#" method="post">
             <div id="content">
               <!-- 아이디 변경불가 -->
               <div class="user_column">
@@ -67,10 +65,10 @@
                   <div class="box int_id">
                     <input type="text" id="id" class="int" value="" readonly />
                     <!-- 아이디를 변경 불가능 하므로 readonly사용 -->
-                    <!--value="<%=memberBean.getId()%>"-->
                   </div>
                 </div>
               </div>
+
               <!-- 비밀번호 변경가능(필수) -->
               <div class="user_column">
                 <div class="title_column">
@@ -80,14 +78,14 @@
                 <div class="error_area">
                   <div class="box int_pass">
                     <input
-                      type="text"
+                      type="password"
                       id="pswd1"
                       class="int"
                       maxlength="20"
                       value=""
                       autocomplete="off"
                       required
-                    /><!--value="<%=memberBean.getPassword1()%>"-->
+                    />
                     <span id="alertTxt">사용불가</span>
                     <img
                       src="../img/m_icon_pass.png"
@@ -98,6 +96,7 @@
                   <span class="error_next_box"></span>
                 </div>
               </div>
+
               <!-- 비밀번호 확인 필수 -->
               <div class="user_column">
                 <div class="title_column">
@@ -107,14 +106,14 @@
                 <div class="error_area">
                   <div class="box int_pass_check">
                     <input
-                      type="text"
+                      type="password"
                       id="pswd2"
                       class="int"
                       maxlength="20"
                       value=""
                       autocomplete="off"
                       required
-                    /><!--value="<%=memberBean.getPassword2()%>"-->
+                    />
                     <img
                       src="../img/m_icon_check_disable.png"
                       id="pswd2_img1"
@@ -140,7 +139,7 @@
                       value=""
                       autocomplete="off"
                       required
-                    /><!--value="<%=memberBean.getNickname()%>"-->
+                    />
                   </div>
                   <span class="error_next_box"></span>
                 </div>
@@ -157,7 +156,7 @@
                       maxlength="100"
                       value=""
                       autocomplete="off"
-                    /><!--value="<%=memberBean.getEmail()%>"-->
+                    />
                   </div>
                   <span class="error_next_box"
                     >이메일 주소를 다시 확인해주세요.</span
@@ -172,6 +171,7 @@
                 id="modify_btn"
                 type="submit"
                 value="회원정보수정"
+                onclick=""
               />
               <input
                 id="cancel_btn"
@@ -183,7 +183,7 @@
           </form>
         </div>
       </section>
-    </main>   
+    </main>
     <script src="../js/user_info_modify.js"></script>
     <script src="../js/header.js"></script>
   </body>

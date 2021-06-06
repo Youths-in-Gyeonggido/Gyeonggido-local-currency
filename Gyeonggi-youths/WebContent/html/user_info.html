@@ -19,92 +19,89 @@
     />
   </head>
   <body>
-
-  <div include-html="header.html"></div>
-  <script type="text/javascript" src="../js/header.js"></script>
+    <div include-html="header.html"></div>
+    <script type="text/javascript" src="../js/header.js"></script>
     <main>
-        <div class="menu_sec" id="menu_sec">
-          <div class="menu_deco">
-            <div class="menu favorites mid" id="favorites">
-              <div class="title_fix">
-                <h3>즐겨찾기</h3>
-              </div>
-              <div include-html="store_list.html"></div>
-              <div include-html="store_list.html"></div>
-              <div include-html="store_list.html"></div>
-              <div include-html="store_list.html"></div>
-              <div include-html="store_list.html"></div>
-              <script>
-                includeHTML();
-              </script>
+      <div class="menu_sec" id="menu_sec">
+        <div class="menu_deco">
+          <div class="menu favorites mid" id="favorites">
+            <div class="title_fix">
+              <h3>즐겨찾기</h3>
             </div>
-            <div class="menu search_history mid" id="search_history">
-              <div class="title_fix all_dlt_btn">
-                <h3>내 검색 내역</h3>
-              </div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <div include-html="store_list.html"></div>
+            <script>
+              includeHTML();
+            </script>
+          </div>
+          <div class="menu search_history mid" id="search_history">
+            <div class="title_fix all_dlt_btn">
+              <h3>내 검색 내역</h3>
             </div>
           </div>
         </div>
+      </div>
 
-        <section class="all_user_info">
-          <div class="all_user_info_wrap">
-            <h1>
-              <i class="fas fa-won-sign"></i>
-              <a href="../html/index.html">내 주변 경기도 지역화폐 가맹점</a>
-            </h1>
-            <h2>회원 정보</h2>
-            <hr class="line" />
-            <div id="modify_user_info" class="my_page_content">
-              <div class="user_column">
-                <div class="title title_space">아이디</div>
-                <div class="divider"></div>
-                <div class="info_content">
-                  abcd<!-- <%=memberBean.getId()%> -->
-                </div>
-              </div>
-              <div class="user_column">
-                <div class="title title_space">닉네임</div>
-                <div class="divider"></div>
-                <div class="info_content">
-                  ㅎㅎ
-                </div>
-              </div>
-              <div class="user_column">
-                <div class="title title_space">이메일</div>
-                <div class="divider"></div>
-                <div class="info_content">
-                  <!-- <%=memberBean.getEmail1()%> -->huiogc1214
-                  <div class="email_space">@</div>
-                  <!-- <%=memberBean.getEmail2()%> -->gamil.com
-                </div>
+      <section class="all_user_info">
+        <div class="all_user_info_wrap">
+          <h1>
+            <i class="fas fa-won-sign"></i>
+            <a href="../html/index.html">내 주변 경기도 지역화폐 가맹점</a>
+          </h1>
+          <h2>회원 정보</h2>
+          <hr />
+          <div id="modify_user_info" class="my_page_content">
+            <div class="user_column">
+              <div class="title title_space">아이디</div>
+              <div class="divider"></div>
+              <div class="info_content">
+                abcd<!-- <%=memberBean.getId()%> -->
               </div>
             </div>
-            <hr class="line" />
-            <div class="user_btns">
-              <div class="wrap_btns">
-                <input
-                  id="modify_btn"
-                  type="button"
-                  value="회원정보수정"
-                  onclick="changeForm(0)"
-                />
-                <input
-                  id="cancel_btn"
-                  type="button"
-                  value="취소"
-                  onclick="changeForm(1)"
-                />
+            <div class="user_column">
+              <div class="title title_space">닉네임</div>
+              <div class="divider"></div>
+              <div class="info_content">ㅎㅎ</div>
+            </div>
+            <div class="user_column">
+              <div class="title title_space">이메일</div>
+              <div class="divider"></div>
+              <div class="info_content">
+                <!-- <%=memberBean.getEmail1()%> -->huiogc1214
+                <div class="email_space">@</div>
+                <!-- <%=memberBean.getEmail2()%> -->gamil.com
               </div>
-              <input
-                id="delete_btn"
-                type="button"
-                value="회원탈퇴"
-                onclick="changeForm(2)"
-              />
             </div>
           </div>
-        </section>
-    </main>  
+          <hr />
+          <div class="user_btns">
+            <div class="wrap_btns">
+              <input
+                id="modify_btn"
+                type="button"
+                value="회원정보수정"
+                onclick="changeForm(0)"
+              />
+              <input
+                id="cancel_btn"
+                type="button"
+                value="취소"
+                onclick="changeForm(1)"
+              />
+            </div>
+            <input
+              id="delete_btn"
+              type="button"
+              value="회원탈퇴"
+              onclick="changeForm(2)"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
     <footer></footer>
   </body>
 </html>

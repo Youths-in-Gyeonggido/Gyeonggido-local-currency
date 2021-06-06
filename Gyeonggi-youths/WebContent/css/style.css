@@ -232,111 +232,6 @@ select {
   margin-left: -140px;
   display: block;
 }
-
-/*로그아웃 모달*/
-.out_modal {
-  font-size: 1.5rem;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  opacity: 0;
-  transition: 0.5s;
-}
-.out_modal.active {
-  opacity: 1;
-  z-index: 10;
-}
-
-/*즐겨찾기 해제 모달*/
-.modal {
-  font-size: 1.5rem;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  opacity: 0;
-  transition: 0.5s;
-}
-.modal.active {
-  opacity: 1;
-  z-index: 10;
-}
-.modal_content {
-  border: 3px solid rgba(15, 103, 167, 0.404);
-  width: 500px;
-  height: 200px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.015);
-  display: flex;
-  overflow: none;
-  flex-direction: column;
-}
-.modal_header {
-  flex: 3;
-  background: #dadada;
-  padding-left: 25px;
-  display: flex;
-}
-.modal_header h2 {
-  display: flex;
-  align-items: center;
-  color: #6b6b6b;
-}
-.modal_answer {
-  flex: 2;
-  display: flex;
-  background: #3498db;
-}
-.modal_answer button {
-  font-weight: 600;
-  font-size: 2rem;
-  color: rgb(27, 18, 18);
-}
-.ans_yes {
-  flex: 1;
-  background: #d0d3d8;
-}
-.ans_no {
-  flex: 1;
-}
-.ans_yes:hover {
-  background-color: rgb(10, 60, 153);
-  transition: all 0.3s;
-}
-.ans_no:hover {
-  background-color: rgb(106, 112, 119);
-  transition: all 0.3s;
-}
-.overlay {
-  background-color: rgba(0, 0, 0, 0.459);
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: 0.5s;
-  display: none;
-  /* visibility: hidden; */
-}
-.overlay.active {
-  opacity: 1;
-  display: block;
-  z-index: 1;
-  /* visibility: visible; */
-}
-.btn_close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  color: #8f8c8c;
-}
-
 /* 오른쪽 가맹점 검색 메인 화면 */
 main {
   padding-top: 60px;
@@ -397,13 +292,6 @@ main {
 
 .search_button_div button:hover {
   background: #3498db;
-}
-.map_sec {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  background-color: rgb(252, 213, 106);
 }
 /* 반응형 */
 
@@ -476,9 +364,11 @@ main {
 @media all and (max-width: 479px) {
   html {
     font-size: 0.6rem;
+    overflow: hidden;
   }
   body {
-    overflow: auto;
+    overflow: hidden;
+    max-width: 100%;
   }
   main {
     padding-top: 30px;
@@ -536,12 +426,16 @@ main {
     margin-left: 5px;
   }
   .menu_sec.active {
-    width: 100%;
+    max-width: 90%;
+    display: block;
+  }
+  .menu.active {
+    max-width: 100%;
   }
   .search > div {
     padding-top: 5px;
   }
-  .search_sec {
-    /* display: none; */
+  .menu > div > div {
+    max-width: 90%;
   }
 }
