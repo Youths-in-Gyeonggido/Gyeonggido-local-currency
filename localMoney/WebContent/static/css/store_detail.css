@@ -1,0 +1,135 @@
+@charset "EUC-KR";
+.title_fix h3 {
+  margin-block-start: 0;
+}
+.store_detail_main {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  margin-top: 20px;
+  min-width: 300px;
+}
+.store_detail_main > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 별점 */
+.detail_star_div i {
+  color: #f1c40f;
+  margin-left: 5px;
+}
+/* 가맹점 명 */
+.store_name {
+  font-size: 3rem;
+  font-weight: bold;
+}
+/* 가맹점 설명 */
+.store_info_div {
+  margin: 10px 0;
+}
+.store_text {
+  color: #3498db;
+  font-size: 1.7rem;
+}
+.store_info_li {
+  color: #686868;
+}
+/* 별점주기 */
+.star_review_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rating {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.rating input {
+  margin: 0;
+  position: relative;
+  width: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  overflow: hidden;
+}
+.rating input::before {
+  content: "\f005";
+  position: absolute;
+  font-family: fontAwesome;
+  font-size: 34px;
+  left: 4px;
+  color: #f1f1f1;
+  transition: 0.3s;
+}
+.rating input:nth-child(2n + 1)::before {
+  right: 4px;
+  left: initial;
+}
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before {
+  color: #f1c40f;
+}
+/* 버튼들 */
+.store_buttons_div > * {
+  margin: 10px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.store_buttons_div i {
+  font-size: 4rem;
+  cursor: pointer;
+}
+/* 즐겨찾기 버튼 */
+.store_buttons_div .fa-heart {
+  color: #f1f1f1;
+}
+.store_buttons_div .fa-heart:hover {
+  color: #d44b4b;
+  transition: all 0.3s;
+}
+.store_buttons_div .fa-heart.active {
+  color: #d44b4b;
+}
+/* 길찾기 */
+.store_buttons_div button {
+  background-color: #3498db;
+  color: white;
+  width: 8rem;
+  height: 3.5rem;
+  border-radius: 5px;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+/* 공유하기 */
+.store_buttons_div:last-child {
+  color: #3498db;
+}
+@media screen and (max-width: 768px) {
+  .store_detail {
+    font-size: 1.7rem;
+  }
+  .store_name {
+    font-size: 2rem;
+  }
+  .store_buttons_div button {
+    font-size: 1.5rem;
+    width: 7rem;
+    height: 3rem;
+  }
+  .store_buttons_div i {
+    font-size: 3rem;
+    cursor: pointer;
+  }
+}

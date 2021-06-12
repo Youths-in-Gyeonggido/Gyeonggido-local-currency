@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mybatis.persistence.AccountMapper">
+    <!-- 리절트 맵 -->
+    <resultMap id="AccountResultMap" type="Account">
+        <result property="id" column="id" />
+		<result property="password" column="password" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+    </resultMap>
+
+   <!-- 로그인 -->
+	<select id="Login" parameterType="Account"
+		resultMap="AccountResultMap">
+		select * from test_member2
+		where id = #{id} and password = #{password}
+	</select>
+
+
+	<!-- 회원가입 -->
+	<insert id="signUp" parameterType="Account">
+		insert into test_member2
+		values(#{id},#{password},#{name},#{email})
+	</insert>
+
+	<!-- 중복확인 -->
+	<select id="idCheck" parameterType="String" resultType="int">
+		select
+		count(id) from test_member2 where id=#{id}
+	</select>
+
+	<!-- 회원정보 -->
+	<select id="mypage" parameterType="Account" resultMap="AccountResultMap">
+		select * from test_member2
+		where id=#{id} and password=#{password}
+	</select>
+	
+	<!--회원정보 수정-->
+	<update id="update" parameterType="Account">
+	update test_member2 set password=#{password},name=#{name},email=#{email}
+	where id=#{id} 
+	</update>
+	
+	<!--회원정보 삭제-->
+	<delete id ="delete" parameterType="Account">
+	delete from test_member2 where passWord=#{password}
+	</delete>
+</mapper>

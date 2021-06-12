@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mybatis.persistence.ShopMapper">
+    <!-- 리절트 맵 -->
+    <resultMap id="shopResultMap" type="shop">
+    	<result column="시군명" property="city" />
+        <result column="상호명" property="shopName" />
+        <result column="업종명" property="shopType" />
+        <result column="위도" property="shopLocationX" />
+        <result column="경도" property="shopLocationY" />
+        <result column="우편번호" property="shopPost" />
+        <result column="소재지도로명주소" property="shopAddress" />
+    </resultMap>
+    
+    <resultMap id="historyResultMap" type="history">
+    	<result column="hisNo" property="hisNo" />
+    	<result column="hrefURL" property="hrefURL" />
+    	<result column="id" property="id" /> 
+    	<result column="shopType" property="shopType"/>
+    	<result column="sectors" property="sectors" />
+    	<result column="address" property="address" />
+    </resultMap>
+    
+    <resultMap id="favoriteResultMap" type="favorite">
+    	<result column="hisNo" property="hisNo" />
+    	<result column="shopName" property="shopName" />
+    	<result column="address" property="address" />
+    	<result column="hrefURL" property="hrefURL" />
+    	<result column="id" property="id" />
+    </resultMap>
+
+    <!-- 반경 조회 매핑 구문 -->
+	<select id="list" parameterType="shop" resultMap="shopResultMap">
+		select 시군명, 상호명, 업종명, 소재지도로명주소, 소재지지번주소, 위도, 경도, 우편번호  from (
+		select 시군명, 상호명, 업종명, 소재지도로명주소, 소재지지번주소, 위도, 경도, 우편번호
+		, DISTNACE_WGS84(${lat}, ${lon}, 위도, 경도) as DISTANCE
+		from ${city}
+		where (위도 between ${lat}-(0.0095*${sectors}) and ${lat}+(0.0095*${sectors}))
+		and (경도 between ${lon}-(0.011*${sectors}) and ${lon}+(0.011*${sectors}))
+		order by DISTANCE) TMP
+        where 업종명 like '%'||#{shopType}||'%'
+        
+	</select>
+	
+	<!-- 상세 조회 매핑 구문 -->
+	<select id="detail" parameterType="shop" resultMap="shopResultMap">
+		select 시군명, 상호명, 업종명, 소재지도로명주소, 소재지지번주소, 위도, 경도, 우편번호
+		from ${city}
+		where 상호명 = #{shopName} 
+		AND 위도 = #{lat}
+	</select>
+	
+	<!-- 검색 기록 삽입 매핑 구문 -->
+	<insert id="insert_history" parameterType="history">
+		insert into search_histroy
+		values(HIS_SEQ.NEXTVAL, #{hrefURL}, #{id}, #{shopType}, #{sectors}, #{address})
+	</insert>
+	
+	<!-- 검색 기록 조회 매핑 구문 -->
+	<select id="select_history" parameterType="history" resultMap="historyResultMap">
+		select HISNO, HREFURL, ID, SHOPTYPE, SECTORS, ADDRESS
+		from SEARCH_HISTROY
+		where ID like #{id}
+		order by HISNO
+	</select>
+	
+	<!-- 검색 기록 삭제 매핑 구문 -->
+	<delete id="delete_history" parameterType="history">
+		delete from SEARCH_HISTROY
+		where hisNO like ${hisNo}
+	</delete>
+
+
+	<!-- 즐겨찾기 삽입 매핑 구문 -->
+	<insert id="insert_favorite" parameterType="favorite">
+		insert into FAVORITE
+		values(FAV_SEQ.NEXTVAL, #{shopName}, #{address}, #{hrefURL}, #{id})
+	</insert>
+	
+	<!-- 즐겨찾기 조회 매핑 구문 -->
+	<select id="select_favorite" parameterType="favorite" resultMap="favoriteResultMap">
+		select FAVNO, shopName, address, hrefURL, id
+		from FAVORITE
+		where ID like #{id}
+		order by FAVNO
+	</select>
+	
+	<!-- 즐겨찾기 삭제 매핑 구문 -->
+	<delete id="delete_favorite" parameterType="favorite">
+		delete from FAVORITE
+		where ID like #{id}
+		AND SHOPNAME like #{shopName}
+		AND ADDRESS like #{address}
+	</delete>
+		
+</mapper>

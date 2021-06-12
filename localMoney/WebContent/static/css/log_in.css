@@ -1,0 +1,135 @@
+@charset "UTF-8";
+:root {
+  --body-background-color: #f5f6f7;
+  --font-color: #4e4e4e;
+  --border-gray-color: #dadada;
+  --main-blue-color: #3498db;
+  --main-blue-border-color: #2693db;
+  --main-blue-hover-color: #add2f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background: var(--body-background-color);
+  font-family: "Noto Sans KR", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.login-form {
+  position: relative;
+  z-index: 2;
+}
+.login-form h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.login-form h1 a {
+  color: black;
+}
+
+.int-area {
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+.int-area:first-child {
+  margin-top: 0;
+}
+.int-area input {
+  width: 100%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #7e818d;
+  font-size: 18px;
+  color: var(--font-color);
+  outline: none;
+}
+.int-area label {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 18px;
+  color: var(--font-color);
+  transition: top 0.5s ease;
+}
+.int-area label.warning {
+  color: rgb(255, 75, 75) !important;
+  animation: warning 0.3s ease;
+  animation-iteration-count: 3;
+}
+@keyframes warning {
+  0% {
+    transform: translateX(-8px);
+  }
+  25% {
+    transform: translateX(8px);
+  }
+  50% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}
+.int-area input:focus + label,
+.int-area input:valid + label {
+  top: 0;
+  font-size: 13px;
+  color: var(--main-blue-color);
+}
+
+.btn-area {
+  margin-top: 30px;
+}
+.btn-area button {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(
+    162deg,
+    #7fbde6 0%,
+    #56ace6 50%,
+    var(--main-blue-color) 100%
+  );
+  color: #fff;
+  font-size: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 800;
+}
+.btn-area button:hover {
+  color: rgba(0, 0, 0, 0.61);
+  background: var(--main-blue-hover-color);
+}
+.caption {
+  margin-top: 20px;
+  text-align: center;
+}
+.caption a {
+  font-size: 15px;
+  color: black;
+}
+.caption a:hover {
+  color: #9da8b3;
+}

@@ -1,0 +1,155 @@
+@charset "UTF-8";
+:root {
+  --body-background-color: #f5f6f7;
+  --font-color: #4e4e4e;
+  --border-gray-color: #dadada;
+  --main-blue-color: #3498db;
+  --main-blue-border-color: #2693db;
+  --main-blue-hover-color: #add2f1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background: var(--body-background-color);
+  font-family: "Noto Sans KR", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.signup-form {
+  position: relative;
+  z-index: 2;
+}
+.signup-form h1 {
+  font-size: 32px;
+  columns: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.signup-form h1 a {
+  color: black;
+}
+.signup-form h2 {
+  columns: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.all-form {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+/* 입력폼 */
+h3 {
+  margin: 19px 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.box {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: solid 1px #dadada;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+
+.int {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  border: none;
+  background: #fff;
+  font-size: 15px;
+}
+.int:focus {
+  outline: none !important;
+  border: 2px solid var(--main-blue-color);
+  box-shadow: 0 0 5px 1px #54a4da;
+}
+input {
+  font-family: "Noto Sans KR", sans-serif;
+  padding-left: 10px;
+}
+
+.pswdImg {
+  width: 18px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  margin-top: -10px;
+  cursor: pointer;
+}
+#email::placeholder {
+  color: #bdbdbd;
+}
+/* 에러메세지 */
+
+.error_next_box {
+  margin-top: 9px;
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+
+#alertTxt {
+  position: absolute;
+  top: 16px;
+  right: 40px;
+  font-size: 12px;
+  color: red;
+  display: none;
+}
+
+/* 버튼 */
+
+.btn_area {
+  margin: 30px 0 91px;
+}
+
+#btnJoin {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(
+    162deg,
+    #7fbde6 0%,
+    #56ace6 50%,
+    var(--main-blue-color) 100%
+  );
+  color: #fff;
+  font-size: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 800;
+}
+#btnJoin:hover {
+  color: rgba(0, 0, 0, 0.61);
+  background: var(--main-blue-hover-color);
+}
+
