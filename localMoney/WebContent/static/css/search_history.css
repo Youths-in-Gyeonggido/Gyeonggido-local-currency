@@ -1,10 +1,10 @@
 :root {
-  --body-background-color: #F5F6F7;
-  --font-color: #4E4E4E;
-  --border-gray-color: #DADADA;
-  --main-blue-color: #3498DB;
-  --main-blue-border-color: #2693DB;
-  --main-blue-second-color: #DDF1FF;
+  --body-background-color: #f5f6f7;
+  --font-color: #4e4e4e;
+  --border-gray-color: #dadada;
+  --main-blue-color: #3498db;
+  --main-blue-border-color: #2693db;
+  --main-blue-second-color: #ddf1ff;
 }
 button {
   border: none;
@@ -16,24 +16,6 @@ h2 {
   display: flex;
   justify-content: center;
 }
-.history_wrap {
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  width: 600px;
-  /* min-width: rem; */
-  max-width: 420px;
-  padding: 0.5rem;
-  margin: 1rem 0.5rem;
-  font-weight: 600;
-}
-/*
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-*/
 .history_whole_delete_btn {
   display: flex;
   justify-content: flex-end;
@@ -46,14 +28,14 @@ h2 {
   font-weight: 600;
 }
 .history_whole_delete_btn a:hover {
-  color: #9B9898;
+  color: #9b9898;
 }
 .search_content {
   display: flex;
   flex-direction: column;
   background-color: white;
   border-radius: 10px;
-  border: solid 1px #D1D1D1;
+  border: solid 1px #d1d1d1;
   width: 600px;
   /* min-width: rem; */
   max-width: 410px;
@@ -61,27 +43,44 @@ h2 {
   margin: 0 0 25px 0;
   padding: 15px;
   font-size: 1.5rem;
-  color: #4B4A4A;
+  color: #4b4a4a;
   font-weight: 600;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
-.dlt_btn i {
-  display: inline-flex;
-  padding: 1px;
-  font-size: 2.5rem;
-  color: #9B9898;
+.dlt_btn {
+  position: absolute;
+  right: 7px;
+  top: 10px;
+}
+.dlt_btn > i {
+  color: #9b9898;
+  cursor: pointer;
+  font-size: 1.4em;
 }
 .search_content p {
-  padding-left: 10px;
-  padding-top: 10px;
-  color: #4E4E4E;
+  /* 6/13 수정*/
+  color: #4e4e4e;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .history_section_wrap {
   display: flex;
   justify-content: center;
+  height: inherit;
 }
 .history_section {
+  /* 6/13 수정*/
+  width: 200px;
   flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .history_button {
   display: flex;
@@ -97,19 +96,18 @@ h2 {
   background-color: var(--main-blue-color);
   cursor: pointer;
   font-weight: 600;
+  margin-top: 20px;
 }
 .history_button button:hover {
   background-color: rgba(34, 54, 97, 0.705);
   transition: all 0.3s;
 }
-.fa-trash-alt {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  padding: 10px;
-  font-size: 1.2em;
-  cursor: pointer;
-}
 .fa-trash-alt:hover {
   color: red;
+}
+@media all and (max-width: 479px) {
+  .search_content {
+    max-width: 90%;
+    font-size: 1.1rem;
+  }
 }

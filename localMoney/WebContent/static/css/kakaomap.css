@@ -1,10 +1,16 @@
 @charset "UTF-8";
-
+/* 전체 복붙해주세요 */
+.map_sec {
+  position: absolute;
+  height: inherit;
+  width: 100%;
+}
 .map {
   margin-top: 40px;
   width: 100vw;
-  height: 70vh;
+  height: 64vh;
   background-color: #add2f1;
+  position: relative;
 }
 
 @media screen and (max-width: 768px) {

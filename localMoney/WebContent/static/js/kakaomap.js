@@ -8,24 +8,6 @@ var options = {
 };
 var map = new kakao.maps.Map(container, options);
 var geocoder = new kakao.maps.services.Geocoder(); // 주소-좌표 변환 객체
-var marker1 = new kakao.maps.Marker(); // 클릭한 위치를 표시할 마커입니다
-//클릭시 클릭된 위치 좌표와 지번주소 반환
-kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-	searchDetailAddrFromCoords(mouseEvent.latLng, function(result, status) {
-		if (status === kakao.maps.services.Status.OK) {
-			var detailAddr = result[0].address.address_name
-			// 마커를 클릭한 위치에 표시합니다 
-			marker1.setPosition(mouseEvent.latLng);
-			marker1.setMap(map);
-			var latlng = mouseEvent.latLng;
-			console.log('클릭한 위치의 위도: ' + latlng.getLat() + ' 경도: ' + latlng.getLng());
-			console.log('클릭한 곳의 지번 주소: ' + result[0].address.address_name);
-			//원하는 위치 클릭시 
-			locationLabel.textContent = '사용자 지정 위치 :';
-			userLocation.textContent = result[0].address.address_name;
-		}
-	});
-});
 function searchDetailAddrFromCoords(coords, callback) {
 	// 좌표로 법정동 상세 주소 정보를 요청합니다
 	geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
@@ -56,7 +38,6 @@ if (navigator.geolocation) {
 		})
 		//현재위치 버튼 클릭시 
 		areaChangeBtn.onclick = function(event) {
-			marker1.setMap(null);
 			//현재위치 html label 표시
 			searchDetailAddrFromCoords(locPosition, function(result, status) {
 				if (status === kakao.maps.services.Status.OK) {

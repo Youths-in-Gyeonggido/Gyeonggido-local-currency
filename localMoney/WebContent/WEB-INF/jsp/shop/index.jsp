@@ -56,21 +56,6 @@ if(request.getSession(false) != null && request.getSession().getAttribute("user"
 	<div id="header">
 		<jsp:include page="/static/html/header2.jsp" />
 	</div>
-	<!-- logout modal load -->
-	<div class="out_modal">
-		<div class="modal_content">
-			<div class="modal_header">
-				<h2>로그아웃 하시겠습니까?</h2>
-				<button class="btn_close">&times;</button>
-			</div>
-			<div class="modal_answer">
-				<button class="ans_yes" type="button">YES</button>
-				<button class="ans_no" type="button">NO</button>
-			</div>
-		</div>
-	</div>
-	<div class="overlay"></div>
-
 	<!-- main start -->
 	<main>
 		<!-- main/menu -->
@@ -290,46 +275,6 @@ if(request.getSession(false) != null && request.getSession().getAttribute("user"
 			}
 			
 		}
-					/* // 주소-좌표 변환 객체
-					var geocoder = new kakao.maps.services.Geocoder();
-
-					var marker = new kakao.maps.Marker({
-						// 지도 중심좌표에 마커를 생성합니다 
-						position : map.getCenter()
-					});
-
-					console.log(map.getCenter());
-					marker.setMap(map);
-
-					kakao.maps.event.addListener(map, 'click', function(
-							mouseEvent) {
-
-						// 클릭한 위도, 경도 정보를 가져옵니다 
-						var latlng = mouseEvent.latLng;
-
-						// 마커 위치를 클릭한 위치로 옮깁니다
-						marker.setPosition(latlng);
-
-						console.log('클릭한 위치의 위도는 ' + latlng.getLat()
-								+ ' 이고, 경도는 ' + latlng.getLng() + ' 입니다');
-					});
-
-					if (navigator.geolocation) {
-						navigator.geolocation
-								.getCurrentPosition(function(position) {
-
-									var lat = position.coords.latitude, // 위도
-									lon = position.coords.longitude; // 경도
-
-									var locPosition = new kakao.maps.LatLng(
-											lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-									message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
-									console.log(locPosition);
-
-									map.setCenter(locPosition);
-									marker.setMap(map);
-								});
-					} */
 				</script>
 			<!-- <script type="text/javascript" src="../js/kakaomap.js"></script> -->
 		</div>
@@ -337,6 +282,6 @@ if(request.getSession(false) != null && request.getSession().getAttribute("user"
 	<!-- main -->
 	<!-- footer start -->
 	<footer></footer>
-	<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/header.js"></script>
+	<script type="text/javascript" src="/static/js/header.js"></script>
 </body>
 </html>

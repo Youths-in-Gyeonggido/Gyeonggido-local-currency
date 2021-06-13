@@ -1,4 +1,5 @@
-@charset "EUC-KR";
+@charset "UTF-8";
+
 .title_fix h3 {
   margin-block-start: 0;
 }
@@ -8,101 +9,64 @@
   flex-direction: column;
   justify-content: center;
   background-color: white;
-  margin-top: 20px;
+  margin-top: 60px; /* 6/13 ÏàòÏ†ï*/
   min-width: 300px;
 }
+
 .store_detail_main > * {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/* ∫∞¡° */
-.detail_star_div i {
-  color: #f1c40f;
-  margin-left: 5px;
-}
-/* ∞°∏Õ¡° ∏Ì */
+
+/* Í∞ÄÎßπÏ†ê Î™Ö */
 .store_name {
   font-size: 3rem;
   font-weight: bold;
 }
-/* ∞°∏Õ¡° º≥∏Ì */
+
+/* Í∞ÄÎßπÏ†ê ÏÑ§Î™Ö */
 .store_info_div {
   margin: 10px 0;
 }
+
 .store_text {
   color: #3498db;
   font-size: 1.7rem;
 }
+
 .store_info_li {
   color: #686868;
 }
-/* ∫∞¡°¡÷±‚ */
-.star_review_div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.rating {
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-}
-.rating input {
-  margin: 0;
-  position: relative;
-  width: 20px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  -webkit-appearance: none;
-  appearance: none;
-  overflow: hidden;
-}
-.rating input::before {
-  content: "\f005";
-  position: absolute;
-  font-family: fontAwesome;
-  font-size: 34px;
-  left: 4px;
-  color: #f1f1f1;
-  transition: 0.3s;
-}
-.rating input:nth-child(2n + 1)::before {
-  right: 4px;
-  left: initial;
-}
-.rating input:hover ~ input::before,
-.rating input:hover::before,
-.rating input:checked ~ input::before,
-.rating input:checked::before {
-  color: #f1c40f;
-}
-/* πˆ∆∞µÈ */
+
+/* Î≤ÑÌäºÎì§ */
 .store_buttons_div > * {
   margin: 10px 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .store_buttons_div i {
   font-size: 4rem;
   cursor: pointer;
 }
-/* ¡Ò∞‹√£±‚ πˆ∆∞ */
+
+/* Ï¶êÍ≤®Ï∞æÍ∏∞ Î≤ÑÌäº */
 .store_buttons_div .fa-heart {
   color: #f1f1f1;
 }
+
 .store_buttons_div .fa-heart:hover {
   color: #d44b4b;
   transition: all 0.3s;
 }
+
 .store_buttons_div .fa-heart.active {
   color: #d44b4b;
 }
-/* ±Ê√£±‚ */
+
+/* Í∏∏Ï∞æÍ∏∞ */
 .store_buttons_div button {
   background-color: #3498db;
   color: white;
@@ -112,10 +76,12 @@
   font-size: 1.7rem;
   font-weight: bold;
 }
-/* ∞¯¿Ø«œ±‚ */
+
+/* Í≥µÏú†ÌïòÍ∏∞ */
 .store_buttons_div:last-child {
   color: #3498db;
 }
+
 @media screen and (max-width: 768px) {
   .store_detail {
     font-size: 1.7rem;

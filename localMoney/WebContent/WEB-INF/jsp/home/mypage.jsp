@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<!--  header를 사용하기 위한 파라미터 받아와서 contentPage에 담고
   <%
     String contentPage=request.getParameter("contentPage");
     if(contentPage==null)
