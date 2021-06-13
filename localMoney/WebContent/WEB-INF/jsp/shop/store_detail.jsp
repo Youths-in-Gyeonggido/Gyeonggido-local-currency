@@ -247,7 +247,7 @@
 	<div class="map_sec">
 		<div class="map" id="map"></div>
 		<script type="text/javascript"
-			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1cfbf7dc8c75f6cba5c6e5684a408d0e&libraries=services&libraries=services"></script>
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey={개인키}&libraries=services&libraries=services"></script>
 		<script>
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapOption = {
