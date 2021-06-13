@@ -26,7 +26,7 @@
 					
 						// 사용할 앱의 JavaScript 키 설정
 					
-						Kakao.init('1cfbf7dc8c75f6cba5c6e5684a408d0e');
+						Kakao.init('{키}');
 						
 						// 카카오링크 버튼 생성
 						Kakao.Link.createDefaultButton({
