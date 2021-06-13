@@ -196,8 +196,12 @@
 	<div class="map_sec">
 		<div class="map" id="map"></div>
 		<script type="text/javascript"
+<<<<<<< HEAD
 			src="//dapi.kakao.com/v2/maps/sdk.js?appkey={키}&libraries=services"></script>
 		
+=======
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey={개인키}&libraries=services&libraries=services"></script>
+>>>>>>> refs/remotes/origin/main
 		<script>
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapOption = {
@@ -253,6 +257,11 @@
 			<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 			
 	</div>
+<<<<<<< HEAD
 	
 	<!-- 21/6/13 박소은 수정 : 스크립트 추가-->
 </html>
+=======
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</html>
+>>>>>>> refs/remotes/origin/main

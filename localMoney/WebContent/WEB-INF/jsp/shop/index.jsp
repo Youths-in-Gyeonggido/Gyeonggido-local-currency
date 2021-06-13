@@ -152,7 +152,11 @@ if(request.getSession(false) != null && request.getSession().getAttribute("user"
 		<div class="map_sec">
 			<div class="map" id="map"></div>
 			<script type="text/javascript"
+<<<<<<< HEAD
 				src="//dapi.kakao.com/v2/maps/sdk.js?appkey={키}&libraries=services"></script>
+=======
+				src="//dapi.kakao.com/v2/maps/sdk.js?appkey={개인키}&libraries=services"></script>
+>>>>>>> refs/remotes/origin/main
 				<script type="text/javascript" src="/static/js/kakaomap.js"></script>
 			<script>
 			
