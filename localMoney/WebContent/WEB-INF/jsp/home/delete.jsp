@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원 탈퇴</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/user_delete.css" />
-    <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/includeHTML.js"></script>
+    <link rel="stylesheet" href="/static/css/user_delete.css" />
+    <script type="text/javascript" src="/static/js/includeHTML.js"></script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -21,14 +21,11 @@
   <body>
 
     <div id="wrap">
-        <div id="header">
-            <jsp:include page="<%=request.getContextPath()%>/static/html/header2.jsp" />
-        </div>
         <div id="main">
             <div class="delete_header">
                 <h1>
                   <i class="fas fa-won-sign"></i>
-                  <a href="<%=request.getContextPath()%>/static/html/index.html">내 주변 경기도 지역화폐 가맹점</a>
+                  <a href="/static/html/index.html">내 주변 경기도 지역화폐 가맹점</a>
                 </h1>
                 <h2>회원 탈퇴</h2>
                 <form class="delete_form" action="delete" method="post">
@@ -42,18 +39,18 @@
                         <!--비밀번호 입력-->
                         <div class="user_column user_pw_column">
                             <label class="control_label" for="password">비밀번호</label>
-                            <input class="form_control" type="password" id="password" name="passWord" required/>
+                            <input class="form_control" type="password" id="password" name="password" required/>
                         </div>
                     </div>    
                   <!--탈퇴/취소버튼-->
                   <div class="user_btn_column">
-                    <input id="delete_btn" type="submit" value="회원탈퇴" onclick="alert('회원 탈퇴에 성공하였습니다.');"/>
+                    <input id="delete_btn" type="submit" value="회원탈퇴"/>
                     <input id="cancel_btn" type="button" value="취소" onclick="location.href='mypage'"/><!--회원정보 페이지로 이동-->
                   </div>    
                 </form>
         </div>
         <div id="footer"></div>
     </div>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/static/js/header.js"></script>
+    <script type="text/javascript" src="/static/js/header.js"></script>
   </body>
 </html>

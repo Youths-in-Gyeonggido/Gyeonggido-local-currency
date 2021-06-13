@@ -87,14 +87,23 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public ModelAndView mypage(Account account) throws Exception {
-		userService.mypage(account);
+	public ModelAndView mypage(HttpServletRequest request, Account account) throws Exception {
+		Account accountList = new Account();
+		Account session = (Account)request.getSession().getAttribute("user");
 		ModelAndView modelAndView = new ModelAndView("/home/mypage");
+		
+		account.setId(session.getId());
+		account.setPassword(session.getPassword());
+		
+		accountList = userService.mypage(account);
+		
+		modelAndView.addObject("user", accountList);
+
 		return modelAndView;
 	}
 	
 
-	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	@RequestMapping(value = "/update", method = RequestMethod.GET)
 	public ModelAndView update(Account account) throws Exception {
 		ModelAndView modelAndView = new ModelAndView("/home/update");
 		return modelAndView;
@@ -102,12 +111,13 @@ public class HomeController {
 	
 	@RequestMapping(value = "/updateUser", method = RequestMethod.POST)
 	public ModelAndView updateUser(HttpSession session,HttpServletRequest request,Account dto) throws Exception {
+		ModelAndView modelAndView = new ModelAndView("/shop/index");
 
 		userService.updateUser(dto);
+		
 		Account login = userService.Login(dto);
 		request.getSession().setAttribute("user", login);
 		
-		ModelAndView modelAndView = new ModelAndView("/shop/index");
 		return modelAndView;
 	}
 	
@@ -123,14 +133,26 @@ public class HomeController {
 
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public ModelAndView delete(HttpSession session,Account dto) throws Exception {
-		userService.delete(dto);
-		session.invalidate();
-		ModelAndView modelAndView = new ModelAndView("/home/home");
+		Account idAccount = new Account();
+		Account sessionUser = (Account)session.getAttribute("user");
+		ModelAndView modelAndView;
+		
+		idAccount.setId(sessionUser.getId());
+		Account account = userService.mypage(idAccount);
+		
+		if(account.getPassword().equals(dto.getPassword())) {
+			userService.delete(dto);
+			modelAndView = new ModelAndView("/shop/index");
+			session.invalidate();
+		} else {
+			modelAndView = new ModelAndView("/home/delete");
+		}
+		
 		return modelAndView;
 	}
 	
 
-	@RequestMapping(value = "/deletePage", method = RequestMethod.POST)
+	@RequestMapping(value = "/deletePage", method = RequestMethod.GET)
 	public ModelAndView deletePage(Account account) throws Exception {
 
 		ModelAndView modelAndView = new ModelAndView("/home/delete");

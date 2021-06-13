@@ -15,12 +15,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>내 회원 정보 / 내 주변 경기도 지역화폐 가맹점</title>
-<link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/user_info.css" />
+<link rel="stylesheet" href="/static/css/user_info.css" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
 	integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
 	crossorigin="anonymous" />
-<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/includeHTML.js"></script>
+<script type="text/javascript" src="/static/js/includeHTML.js"></script>
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
 	rel="stylesheet" />
@@ -28,9 +28,9 @@
 <body>
 	<!-- header -->
 	
-	<jsp:include page="<%=request.getContextPath()%>/static/html/header2.jsp" />
+	<jsp:include page="/static/html/header2.jsp" />
 	
-	<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/header.js"></script>
+	<script type="text/javascript" src="/static/js/header.js"></script>
 	<main>
 		<div class="menu_sec" id="menu_sec">
 			<div class="menu_deco">
@@ -84,7 +84,7 @@
 					<div class="wrap_btns">
 						<input id="modify_btn" type="button" value="회원정보수정"
 							onclick="location.href='update'" /><input id="cancel_btn"
-							type="button" value="취소" onclick="location.href='index'" />
+							type="button" value="취소" onclick="location.href='/shop/index'" />
 					</div>
 					<input id="delete_btn" type="button" value="회원탈퇴"
 						onclick="location.href='deletePage'" />

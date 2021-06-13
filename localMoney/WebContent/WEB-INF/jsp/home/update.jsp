@@ -17,8 +17,8 @@
 </head>
 <body>
 	<!-- header -->
-	<jsp:include page="<%=request.getContextPath()%>/static/html/header2.jsp" />
-	<script type="text/javascript" src="<%=request.getContextPath()%>/static/js/header.js"></script>
+	<jsp:include page="/static/html/header2.jsp" />
+	<script type="text/javascript" src="/static/js/header.js"></script>
 	<main>
 		<div class="menu_sec" id="menu_sec">
 			<div class="menu_deco">
@@ -26,11 +26,11 @@
 					<div class="title_fix">
 						<h3>즐겨찾기</h3>
 					</div>
-					<div include-html="<%=request.getContextPath()%>/static/html/store_list.html"></div>
-					<div include-html="<%=request.getContextPath()%>/static/html/store_list.html"></div>
-					<div include-html="<%=request.getContextPath()%>/static/html/store_list.html"></div>
-					<div include-html="<%=request.getContextPath()%>/static/html/store_list.html"></div>
-					<div include-html="<%=request.getContextPath()%>/static/html/store_list.html"></div>
+					<div include-html="/static/html/store_list.html"></div>
+					<div include-html="/static/html/store_list.html"></div>
+					<div include-html="/static/html/store_list.html"></div>
+					<div include-html="/static/html/store_list.html"></div>
+					<div include-html="/static/html/store_list.html"></div>
 					<script>
 						includeHTML();
 					</script>
@@ -78,7 +78,7 @@
 									<input type="password" id="pwsd1" name="password" class="int"
 										maxlength="20" value="" autocomplete="off" required /> <span
 										id="alertTxt">사용불가</span> <img
-										src="<%=request.getContextPath()%>/static/img/m_icon_pass.png" id="pswd1_img1"
+										src="/static/img/m_icon_pass.png" id="pswd1_img1"
 										class="pswdImg" />
 								</div>
 								<span class="error_next_box"></span>
@@ -92,9 +92,9 @@
 							</div>
 							<div class="error_area">
 								<div class="box int_pass_check">
-									<input type="text" id="pswd2" class="int" maxlength="20"
+									<input type="password" id="pswd2" class="int" maxlength="20"
 										autocomplete="off" required /> <img
-										src="<%=request.getContextPath()%>/static/img/m_icon_check_disable.png" id="pswd2_img1"
+										src="/static/img/m_icon_check_disable.png" id="pswd2_img1"
 										class="pswdImg" />
 								</div>
 								<span class="error_next_box"></span>

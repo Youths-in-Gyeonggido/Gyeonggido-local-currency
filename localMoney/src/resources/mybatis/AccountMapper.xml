@@ -35,7 +35,7 @@
 	<!-- 회원정보 -->
 	<select id="mypage" parameterType="Account" resultMap="AccountResultMap">
 		select * from test_member2
-		where id=#{id} and password=#{password}
+		where id=#{id}
 	</select>
 	
 	<!--회원정보 수정-->
@@ -46,6 +46,6 @@
 	
 	<!--회원정보 삭제-->
 	<delete id ="delete" parameterType="Account">
-	delete from test_member2 where passWord=#{password}
+	delete from test_member2 where password=#{password}
 	</delete>
 </mapper>
