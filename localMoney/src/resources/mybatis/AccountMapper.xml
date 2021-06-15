@@ -39,7 +39,7 @@
 	</select>
 	
 	<!--회원정보 수정-->
-	<update id="update" parameterType="Account">
+	<update id="updateUser" parameterType="Account">
 	update test_member2 set password=#{password},name=#{name},email=#{email}
 	where id=#{id} 
 	</update>

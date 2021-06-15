@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.mybatis.domain.Account;
-import org.mybatis.service.UserServiceImpl;
+import org.mybatis.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +22,7 @@ import org.springframework.web.servlet.view.RedirectView;
 public class HomeController {
 
 	@Resource
-	private UserServiceImpl userService;
+	private IUserService userService;
 
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
@@ -89,16 +89,23 @@ public class HomeController {
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
 	public ModelAndView mypage(HttpServletRequest request, Account account) throws Exception {
 		Account accountList = new Account();
-		Account session = (Account)request.getSession().getAttribute("user");
-		ModelAndView modelAndView = new ModelAndView("/home/mypage");
-		
-		account.setId(session.getId());
-		account.setPassword(session.getPassword());
-		
-		accountList = userService.mypage(account);
-		
-		modelAndView.addObject("user", accountList);
+		ModelAndView modelAndView;
+		if(request.getSession(false) != null && request.getSession().getAttribute("user") != null) {
+			Account session = (Account)request.getSession().getAttribute("user");
+			modelAndView = new ModelAndView("/home/mypage");
+			
+			account.setId(session.getId());
+			account.setPassword(session.getPassword());
+			
+			accountList = userService.mypage(account);
+			
+			modelAndView.addObject("user", accountList);
 
+			return modelAndView;
+		}
+		
+		modelAndView = new ModelAndView("/shop/index");
+		
 		return modelAndView;
 	}
 	
