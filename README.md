@@ -3,7 +3,7 @@
 >사용자 위치 기반의 경기지역화폐 가맹점 정보 제공 사이트   
 >2021.03.02 - 2021.06.10
 
-## TEAM
+## 🤼‍ Team
 F/E  :  [박소은 / So-eun Park][plink] `팀장`    
 　　 [정다솔 / Da-sol Jung][dlink]
 
@@ -16,7 +16,7 @@ B/E  :  [조현재 / Hyun-jae Jo][hlink]
 [klink]: https://github.com/kmin3560
 
    
-## Document
+## 📄 Document
 
 [Google Docs][docs]
 
