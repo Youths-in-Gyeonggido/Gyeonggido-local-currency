@@ -21,3 +21,11 @@ B/E  :  [조현재 / Hyun-jae Jo][hlink]
 [Google Docs][docs]
 
 [docs]: https://docs.google.com/document/d/19mJG8Mn8I1cb489qlUQ66vdgjWV811fjScuU4fOgGA0/edit
+
+
+## 🛠️ Tech Stack
+- HTML / CSS / JS
+- JAVA / Spring
+- Apache Tomcat
+- Mybatis
+- Oracle DB
